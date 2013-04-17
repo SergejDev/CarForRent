@@ -17,6 +17,9 @@ namespace CarForRent.Models
         [DataType(DataType.DateTime)]
         public DateTime OrderDate { get; set; }
 
+        [Required]
+        public bool IsOpen { get; set; }
+
         public virtual ICollection<Auto> Autos { get; set; }
 
         public virtual ICollection<UserProfile> Clients { get; set; }
