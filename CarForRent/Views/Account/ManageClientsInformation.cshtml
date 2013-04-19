@@ -1,0 +1,61 @@
+﻿@model CarForRent.Models.Client
+
+@{
+    ViewBag.Title = "Manage your personal information";
+    Layout = "~/Views/Shared/_BootstrapLayout.basic.cshtml";
+}
+
+<h2>Manage your personal information</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Edit </legend>
+
+        @Html.HiddenFor(model => model.ClientId)
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserFirstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserFirstName)
+            @Html.ValidationMessageFor(model => model.UserFirstName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserSecondName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserSecondName)
+            @Html.ValidationMessageFor(model => model.UserSecondName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserMidleName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserMidleName)
+            @Html.ValidationMessageFor(model => model.UserMidleName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PassportNumber)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PassportNumber)
+            @Html.ValidationMessageFor(model => model.PassportNumber)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+        <div>
+            You can change password @Html.ActionLink("here...", "ManagePassword");
+        </div>
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

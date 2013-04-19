@@ -1,0 +1,78 @@
+﻿@model CarForRent.Models.Auto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Auto</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Mark)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Mark)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Model)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Model)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Number)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Number)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.YearOfManufacture)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.YearOfManufacture)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PlacesCount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PlacesCount)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EngineVolume)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EngineVolume)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Price)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Price)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ImageFileName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ImageFileName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AutoCount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AutoCount)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.AutoId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
