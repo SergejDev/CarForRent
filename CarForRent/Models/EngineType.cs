@@ -12,6 +12,7 @@ namespace CarForRent.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int EngineTypeId { set; get; }
 
+        [Display(Name = "Engine type auto")]
         [Required]
         public String EngineTypeTitle { set; get; }
     }

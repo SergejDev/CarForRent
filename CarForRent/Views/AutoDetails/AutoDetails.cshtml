@@ -1,0 +1,109 @@
+﻿@model CarForRent.Models.Auto
+
+@{
+    ViewBag.Title = "AutoDetails";
+    Layout = "~/Views/Shared/_BootstrapLayout.basic.cshtml";
+}
+
+<h2>Auto details</h2>
+
+<fieldset>
+    <legend>Auto</legend>
+    <div class="ElementsBox">
+        
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ImageFileName)
+    </div>
+        <div class="display-field">
+            
+            @{
+                object path = System.Configuration.ConfigurationManager.AppSettings["localAddress"] + "/Images/" + Model.ImageFileName;
+                <img src="@path"/> 
+            }
+
+        </div>
+     
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Mark)
+        </div>
+        <div class="display-field">
+            @Html.DisplayTextFor(model => model.Mark)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Model)
+        </div>
+        <div class="display-field">
+            @Html.DisplayTextFor(model => model.Model)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Number)
+        </div>
+        <div class="display-field">
+            @Html.DisplayTextFor(model => model.Number)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.YearOfManufacture)
+        </div>
+        <div class="display-field">
+            @Html.DisplayTextFor(model => model.YearOfManufacture)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.PlacesCount)
+        </div>
+        <div class="display-field">
+            @Html.DisplayTextFor(model => model.PlacesCount)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.EngineVolume)
+        </div>
+        <div class="display-field">
+            @Html.DisplayTextFor(model => model.EngineVolume)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Price)
+        </div>
+        <div class="display-field">
+            @Html.DisplayTextFor(model => model.Price)
+        </div>
+   
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.AutoCount)
+        </div>
+        <div class="display-field">
+            @Html.DisplayTextFor(model => model.AutoCount)
+        </div>
+   
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.EngineType.EngineTypeTitle)
+        </div>
+        <div class="display-field">
+            @Html.DisplayTextFor(model => model.EngineType.EngineTypeTitle)
+        </div>
+    
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.AutoClass.ClassTitle)
+        </div>
+        <div class="display-field">
+            @Html.DisplayTextFor(model => model.AutoClass.ClassTitle)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.FuelType.FuelTypeTitle)
+        </div>
+        <div class="display-field">
+            @Html.DisplayTextFor(model => model.FuelType.FuelTypeTitle)
+        </div>  
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.GearboxType.GearboxTypeTitle)
+        </div>
+        <div class="display-field">
+            @Html.DisplayTextFor(model => model.GearboxType.GearboxTypeTitle)
+        </div>      
+    </div>
+</fieldset>

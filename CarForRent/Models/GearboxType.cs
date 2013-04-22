@@ -12,6 +12,7 @@ namespace CarForRent.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int GearboxTypeId { set; get; }
 
+        [Display (Name = "Gearbox type auto")]
         [Required]
         public String GearboxTypeTitle { set; get; }
     }

@@ -1,0 +1,11 @@
+﻿.display-label {
+    float: left;
+    font-weight: bold;
+}
+.display-field {
+    margin-left: 200px;
+}
+
+.ElementsBox {
+    line-height: 50px;
+}

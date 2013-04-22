@@ -12,6 +12,7 @@ namespace CarForRent.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int FuelTypeId { set; get; }
 
+        [Display(Name = "Fuel type auto")]
         [Required]
         public String FuelTypeTitle { set; get; }
     }

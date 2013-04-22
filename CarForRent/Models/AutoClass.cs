@@ -12,6 +12,7 @@ namespace CarForRent.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int AutoClassId { set; get; }
 
+        [Display(Name = "Class auto")]
         [Required]
         public String ClassTitle { set; get; }
     }
