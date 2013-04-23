@@ -1,0 +1,81 @@
+﻿@model CarForRent.Models.Auto
+
+@{
+    ViewBag.Title = "Delete auto";
+}
+
+<h2>Delete auto</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Auto</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Mark)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Mark)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Model)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Model)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Number)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Number)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.YearOfManufacture)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.YearOfManufacture)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PlacesCount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PlacesCount)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EngineVolume)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EngineVolume)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Price)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Price)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ImageFileName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ImageFileName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AutoCount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AutoCount)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

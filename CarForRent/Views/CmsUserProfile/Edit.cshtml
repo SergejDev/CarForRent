@@ -1,0 +1,61 @@
+﻿@model CarForRent.Models.UserProfile
+
+@{
+    ViewBag.Title = "Edit user";
+}
+
+<h2>Edit user</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>User Profile</legend>
+
+        @Html.HiddenFor(model => model.UserId)
+        @Html.HiddenFor(model => model.UserName)
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ClientInformation.UserFirstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ClientInformation.UserFirstName)
+            @Html.ValidationMessageFor(model => model.ClientInformation.UserFirstName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ClientInformation.UserMidleName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ClientInformation.UserMidleName)
+            @Html.ValidationMessageFor(model => model.ClientInformation.UserMidleName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ClientInformation.UserLastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ClientInformation.UserLastName)
+            @Html.ValidationMessageFor(model => model.ClientInformation.UserLastName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ClientInformation.PassportNumber)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ClientInformation.PassportNumber)
+            @Html.ValidationMessageFor(model => model.ClientInformation.PassportNumber)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

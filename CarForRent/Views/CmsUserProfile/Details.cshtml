@@ -1,0 +1,50 @@
+﻿@model CarForRent.Models.UserProfile
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>User Profile</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ClientInformation.UserFirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ClientInformation.UserFirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ClientInformation.UserMidleName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ClientInformation.UserMidleName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ClientInformation.UserLastName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ClientInformation.UserLastName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ClientInformation.PassportNumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ClientInformation.PassportNumber)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.UserId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

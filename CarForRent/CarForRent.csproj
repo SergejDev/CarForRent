@@ -170,11 +170,15 @@
     <Compile Include="BootstrapSupport\ViewHelperExtensions.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BootstrapBaseController.cs" />
+    <Compile Include="Controllers\Cms\CmsAutoController.cs" />
+    <Compile Include="Controllers\Cms\CmsBaseController.cs" />
+    <Compile Include="Controllers\Cms\CmsUserProfileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\SelectedListBuilder.cs" />
     <Compile Include="Migrations\201304162054247_AddMainTables.cs" />
     <Compile Include="Migrations\201304162054247_AddMainTables.Designer.cs">
       <DependentUpon>201304162054247_AddMainTables.cs</DependentUpon>
@@ -186,6 +190,26 @@
     <Compile Include="Migrations\201304171840369_OrdersTableImproove.cs" />
     <Compile Include="Migrations\201304171840369_OrdersTableImproove.Designer.cs">
       <DependentUpon>201304171840369_OrdersTableImproove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201304182023455_RenameCount.cs" />
+    <Compile Include="Migrations\201304182023455_RenameCount.Designer.cs">
+      <DependentUpon>201304182023455_RenameCount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201304182026081_NumberModyfied.cs" />
+    <Compile Include="Migrations\201304182026081_NumberModyfied.Designer.cs">
+      <DependentUpon>201304182026081_NumberModyfied.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201304182044276_Fixes2.cs" />
+    <Compile Include="Migrations\201304182044276_Fixes2.Designer.cs">
+      <DependentUpon>201304182044276_Fixes2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201304190832115_LmallFixes.cs" />
+    <Compile Include="Migrations\201304190832115_LmallFixes.Designer.cs">
+      <DependentUpon>201304190832115_LmallFixes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201304190840086_fix.cs" />
+    <Compile Include="Migrations\201304190840086_fix.Designer.cs">
+      <DependentUpon>201304190840086_fix.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -339,6 +363,16 @@
     <Content Include="Views\Shared\_BootstrapLayout.empty.cshtml" />
     <Content Include="Views\Shared\_BootstrapLayout.basic.cshtml" />
     <Content Include="Views\Shared\_alerts.cshtml" />
+    <Content Include="Views\CmsUserProfile\Index.cshtml" />
+    <Content Include="Views\CmsUserProfile\Details.cshtml" />
+    <Content Include="Views\CmsUserProfile\Edit.cshtml" />
+    <Content Include="Views\CmsUserProfile\Delete.cshtml" />
+    <Content Include="Views\CmsAuto\Index.cshtml" />
+    <Content Include="Views\CmsAuto\Details.cshtml" />
+    <Content Include="Views\CmsAuto\Create.cshtml" />
+    <Content Include="Views\CmsAuto\Edit.cshtml" />
+    <Content Include="Views\CmsAuto\Delete.cshtml" />
+    <Content Include="Views\CmsBase\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -355,6 +389,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201304171840369_OrdersTableImproove.resx">
       <DependentUpon>201304171840369_OrdersTableImproove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304182023455_RenameCount.resx">
+      <DependentUpon>201304182023455_RenameCount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304182026081_NumberModyfied.resx">
+      <DependentUpon>201304182026081_NumberModyfied.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304182044276_Fixes2.resx">
+      <DependentUpon>201304182044276_Fixes2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304190832115_LmallFixes.resx">
+      <DependentUpon>201304190832115_LmallFixes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304190840086_fix.resx">
+      <DependentUpon>201304190840086_fix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

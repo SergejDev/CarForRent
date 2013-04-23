@@ -15,6 +15,7 @@ namespace CarForRent.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
 
+        [Display(Name = "Login")]
         public String UserName { get; set; }
 
         public virtual Client ClientInformation { get; set; }
@@ -23,7 +24,7 @@ namespace CarForRent.Models
     public class RegisterExternalLoginModel
     {
         [Required]
-        [Display(Name = "User name")]
+        [Display(Name = "Login")]
         public string UserName { get; set; }
 
         public string ExternalLoginData { get; set; }
@@ -51,7 +52,7 @@ namespace CarForRent.Models
     public class LoginModel
     {
         [Required]
-        [Display(Name = "User name")]
+        [Display(Name = "Login")]
         public string UserName { get; set; }
 
         [Required]
@@ -66,7 +67,7 @@ namespace CarForRent.Models
     public class RegisterModel
     {
         [Required]
-        [Display(Name = "User name")]
+        [Display(Name = "Login")]
         public string UserName { get; set; }
 
         [Required]

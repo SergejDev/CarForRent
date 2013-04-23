@@ -1,0 +1,123 @@
+﻿@model CarForRent.Models.Auto
+
+@{
+    ViewBag.Title = "Add auto";
+}
+
+<h2>Add auto</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Auto</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Mark)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Mark)
+            @Html.ValidationMessageFor(model => model.Mark)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Model)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Model)
+            @Html.ValidationMessageFor(model => model.Model)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EngineType)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.EngineType.EngineTypeId, (List<SelectListItem>)ViewBag.EngineTypeItems)
+            @Html.ValidationMessageFor(model => model.EngineType)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GearboxType)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.GearboxType.GearboxTypeId, (List<SelectListItem>)ViewBag.GearboxTypeItems)
+            @Html.ValidationMessageFor(model => model.GearboxType)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FuelType)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.FuelType.FuelTypeId, (List<SelectListItem>)ViewBag.FuelTypeItems)
+            @Html.ValidationMessageFor(model => model.FuelType)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Number)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Number)
+            @Html.ValidationMessageFor(model => model.Number)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.YearOfManufacture)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.YearOfManufacture)
+            @Html.ValidationMessageFor(model => model.YearOfManufacture)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PlacesCount)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PlacesCount)
+            @Html.ValidationMessageFor(model => model.PlacesCount)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EngineVolume)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EngineVolume)
+            @Html.ValidationMessageFor(model => model.EngineVolume)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Price)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Price)
+            @Html.ValidationMessageFor(model => model.Price)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ImageFileName)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.ImageFileName)
+            @Html.ValidationMessageFor(model => model.ImageFileName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AutoCount)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AutoCount)
+            @Html.ValidationMessageFor(model => model.AutoCount)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -19,31 +19,37 @@ namespace CarForRent.Models
         public String Model { get; set; }
 
         [Required]
-        public int Number { get; set; }
+        public String Number { get; set; }
 
-        [DataType(DataType.DateTime)]
-        public DateTime? YearOfManufacture { get; set; }
+        [Display(Name="Year Of Manufacture")]
+        public int? YearOfManufacture { get; set; }
 
         [Required]
+        [Display(Name = "Places Count")]
         public byte PlacesCount { set; get; }
 
-        public double? EngineVolume { set; get; }
+        [Display(Name = "Engine Volume")]
+        public float EngineVolume { set; get; }
 
         [Required]
-        public decimal Price { set; get; }
+        public decimal Price { set; get; }   
 
         [DataType(System.ComponentModel.DataAnnotations.DataType.ImageUrl)]
         public String ImageFileName { set; get; }
 
         [Required]
+        [Display(Name = "Auto Count")]
         public int AutoCount { set; get; }
 
         public virtual AutoClass AutoClass { get; set; }
 
+        [Display(Name = "Engine Type")]
         public virtual EngineType EngineType { get; set; }
 
+        [Display(Name = "Gearbox Type")]
         public virtual GearboxType GearboxType { get; set; }
 
+        [Display(Name = "Fuel Type")]
         public virtual FuelType FuelType { get; set; }
 
     }
