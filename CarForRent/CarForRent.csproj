@@ -178,6 +178,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ComboBoxPopulator.cs" />
     <Compile Include="Helpers\SelectedListBuilder.cs" />
     <Compile Include="Migrations\201304162054247_AddMainTables.cs" />
     <Compile Include="Migrations\201304162054247_AddMainTables.Designer.cs">
@@ -210,6 +211,26 @@
     <Compile Include="Migrations\201304190840086_fix.cs" />
     <Compile Include="Migrations\201304190840086_fix.Designer.cs">
       <DependentUpon>201304190840086_fix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201304241826597_RelationshipsFix.cs" />
+    <Compile Include="Migrations\201304241826597_RelationshipsFix.Designer.cs">
+      <DependentUpon>201304241826597_RelationshipsFix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201304241937435_AccountFixes.cs" />
+    <Compile Include="Migrations\201304241937435_AccountFixes.Designer.cs">
+      <DependentUpon>201304241937435_AccountFixes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201304241940023_NewAccountFixes.cs" />
+    <Compile Include="Migrations\201304241940023_NewAccountFixes.Designer.cs">
+      <DependentUpon>201304241940023_NewAccountFixes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201304241942017_Fixes.cs" />
+    <Compile Include="Migrations\201304241942017_Fixes.Designer.cs">
+      <DependentUpon>201304241942017_Fixes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201304241948305_NewVar.cs" />
+    <Compile Include="Migrations\201304241948305_NewVar.Designer.cs">
+      <DependentUpon>201304241948305_NewVar.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -367,11 +388,11 @@
     <Content Include="Views\CmsUserProfile\Details.cshtml" />
     <Content Include="Views\CmsUserProfile\Edit.cshtml" />
     <Content Include="Views\CmsUserProfile\Delete.cshtml" />
-    <Content Include="Views\CmsAuto\Index.cshtml" />
-    <Content Include="Views\CmsAuto\Details.cshtml" />
-    <Content Include="Views\CmsAuto\Create.cshtml" />
-    <Content Include="Views\CmsAuto\Edit.cshtml" />
-    <Content Include="Views\CmsAuto\Delete.cshtml" />
+    <Content Include="Views\Auto\Index.cshtml" />
+    <Content Include="Views\Auto\Details.cshtml" />
+    <Content Include="Views\Auto\Create.cshtml" />
+    <Content Include="Views\Auto\Edit.cshtml" />
+    <Content Include="Views\Auto\Delete.cshtml" />
     <Content Include="Views\CmsBase\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -404,6 +425,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201304190840086_fix.resx">
       <DependentUpon>201304190840086_fix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304241826597_RelationshipsFix.resx">
+      <DependentUpon>201304241826597_RelationshipsFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304241937435_AccountFixes.resx">
+      <DependentUpon>201304241937435_AccountFixes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304241940023_NewAccountFixes.resx">
+      <DependentUpon>201304241940023_NewAccountFixes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304241942017_Fixes.resx">
+      <DependentUpon>201304241942017_Fixes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304241948305_NewVar.resx">
+      <DependentUpon>201304241948305_NewVar.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

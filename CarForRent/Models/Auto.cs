@@ -41,15 +41,32 @@ namespace CarForRent.Models
         [Display(Name = "Auto Count")]
         public int AutoCount { set; get; }
 
+
+        public int AutoClassId { set; get; }
+
+        [Display(Name = "Auto Class")]
+        [ForeignKey("AutoClassId")]
         public virtual AutoClass AutoClass { get; set; }
 
+
+        public int EngineTypeId { set; get; }
+
         [Display(Name = "Engine Type")]
+        [ForeignKey("EngineTypeId")]
         public virtual EngineType EngineType { get; set; }
 
+
+        public int GearboxTypeId { set; get; }
+
         [Display(Name = "Gearbox Type")]
+        [ForeignKey("GearboxTypeId")]
         public virtual GearboxType GearboxType { get; set; }
 
+
+        public int FuelTypeId { set; get; }
+
         [Display(Name = "Fuel Type")]
+        [ForeignKey("FuelTypeId")]
         public virtual FuelType FuelType { get; set; }
 
     }

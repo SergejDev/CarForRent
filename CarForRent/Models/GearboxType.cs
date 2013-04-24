@@ -14,5 +14,6 @@ namespace CarForRent.Models
 
         [Required]
         public String GearboxTypeTitle { set; get; }
+
     }
 }

@@ -10,42 +10,54 @@ namespace CarForRent.Helpers
 {
     public class SelectedListBuilder
     {
-        private const String DefaultMessage = "Select pleace";
+        //private const String DefaultMessage = "Select pleace";
 
         private DataBaseContext db = new DataBaseContext();
 
-        public List<SelectListItem> EngineTypeListItems()
+        public SelectList AutoClassListItems()
         {
-            List<SelectListItem> engineTypeItems = new List<SelectListItem>();
-            engineTypeItems.Add(new SelectListItem() { Text = DefaultMessage });
-            foreach (var engineType in db.EngineTypes)
-            {
-                engineTypeItems.Add(new SelectListItem() { Value = engineType.EngineTypeId.ToString(), Text = engineType.EngineTypeTitle });
-            }
+            SelectList autoClassItems = new SelectList(db.AutoClasses, "AutoClassId", "ClassTitle");
+            //gearboxTypeItems.Add(new SelectListItem() { Text = DefaultMessage });
+            //foreach (var gearboxType in db.GearboxTypes)
+            //{
+            //    gearboxTypeItems.Add(new SelectListItem() { Value = gearboxType.GearboxTypeId.ToString(), Text = gearboxType.GearboxTypeTitle });
+            //}
+
+            return autoClassItems;
+        }
+        
+        public SelectList EngineTypeListItems()
+        {
+            SelectList engineTypeItems = new SelectList(db.EngineTypes, "EngineTypeId", "EngineTypeTitle");
+            //engineTypeItems.Add(new SelectListItem() { Text = DefaultMessage });
+            //foreach (var engineType in db.EngineTypes)
+            //{
+            //    engineTypeItems.Add(new SelectListItem() { Value = engineType.EngineTypeId.ToString(), Text = engineType.EngineTypeTitle });
+            //}
 
             return engineTypeItems;
         }
 
-        public List<SelectListItem> GearboxTypeListItems()
+        public SelectList GearboxTypeListItems()
         {
-            List<SelectListItem> gearboxTypeItems = new List<SelectListItem>();
-            gearboxTypeItems.Add(new SelectListItem() { Text = DefaultMessage });
-            foreach (var gearboxType in db.GearboxTypes)
-            {
-                gearboxTypeItems.Add(new SelectListItem() { Value = gearboxType.GearboxTypeId.ToString(), Text = gearboxType.GearboxTypeTitle });
-            }
+            SelectList gearboxTypeItems = new SelectList(db.GearboxTypes, "GearboxTypeId", "GearboxTypeTitle");
+            //gearboxTypeItems.Add(new SelectListItem() { Text = DefaultMessage });
+            //foreach (var gearboxType in db.GearboxTypes)
+            //{
+            //    gearboxTypeItems.Add(new SelectListItem() { Value = gearboxType.GearboxTypeId.ToString(), Text = gearboxType.GearboxTypeTitle });
+            //}
 
             return gearboxTypeItems;
         }
 
-        public List<SelectListItem> FuelTypeListItems()
+        public SelectList FuelTypeListItems()
         {
-            List<SelectListItem> fuelTypeItems = new List<SelectListItem>();
-            fuelTypeItems.Add(new SelectListItem() { Text = DefaultMessage });
-            foreach (var fuelType in db.FuelTypes)
-            {
-                fuelTypeItems.Add(new SelectListItem() { Value = fuelType.FuelTypeId.ToString(), Text = fuelType.FuelTypeTitle });
-            }
+            SelectList fuelTypeItems = new SelectList(db.FuelTypes, "FuelTypeId", "FuelTypeTitle");
+            //fuelTypeItems.Add(new SelectListItem() { Text = DefaultMessage });
+            //foreach (var fuelType in db.FuelTypes)
+            //{
+            //    fuelTypeItems.Add(new SelectListItem() { Value = fuelType.FuelTypeId.ToString(), Text = fuelType.FuelTypeTitle });
+            //}
 
             return fuelTypeItems;
         }

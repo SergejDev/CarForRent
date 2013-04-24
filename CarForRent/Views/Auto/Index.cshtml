@@ -18,6 +18,9 @@
             @Html.DisplayNameFor(model => model.Model)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.AutoClass)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.EngineType)
         </th>
         <th>
@@ -60,13 +63,16 @@
                 @Html.DisplayFor(modelItem => item.Model)
             </td>
             <td>
-                @Html.DisplayFor(modelItme => item.EngineType)
+                @Html.DisplayFor(modelItme => item.AutoClass.ClassTitle)
             </td>
             <td>
-                @Html.DisplayFor(modelItme => item.GearboxType)
+                @Html.DisplayFor(modelItme => item.EngineType.EngineTypeTitle)
             </td>
             <td>
-                @Html.DisplayFor(modelItme => item.FuelType)
+                @Html.DisplayFor(modelItme => item.GearboxType.GearboxTypeTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItme => item.FuelType.FuelTypeTitle)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Number)

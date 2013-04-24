@@ -1,18 +1,16 @@
 ﻿@model CarForRent.Models.Auto
 
 @{
-    ViewBag.Title = "Edit auto";
+    ViewBag.Title = "Add auto";
 }
 
-<h2>Edit auto</h2>
+<h2>Add auto</h2>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
 
     <fieldset>
         <legend>Auto</legend>
-
-        @Html.HiddenFor(model => model.AutoId)
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Mark)
@@ -31,6 +29,38 @@
         </div>
 
         <div class="editor-label">
+            @Html.LabelFor(model => model.AutoClass)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.AutoClassId, (SelectList)ViewBag.AutoClassItems)
+            @Html.ValidationMessageFor(model => model.AutoClass)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EngineType)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.EngineTypeId, (SelectList)ViewBag.EngineTypeItems)
+            @Html.ValidationMessageFor(model => model.EngineType)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GearboxType)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.GearboxTypeId, (SelectList)ViewBag.GearboxTypeItems)
+            @Html.ValidationMessageFor(model => model.GearboxType)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FuelType)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.FuelTypeId, (SelectList)ViewBag.FuelTypeItems)
+            @Html.ValidationMessageFor(model => model.FuelType)
+        </div>
+
+        <div class="editor-label">
             @Html.LabelFor(model => model.Number)
         </div>
         <div class="editor-field">
@@ -42,7 +72,7 @@
             @Html.LabelFor(model => model.YearOfManufacture)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.YearOfManufacture)
+            @Html.TextBoxFor(model => model.YearOfManufacture)
             @Html.ValidationMessageFor(model => model.YearOfManufacture)
         </div>
 
@@ -74,7 +104,7 @@
             @Html.LabelFor(model => model.ImageFileName)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.ImageFileName)
+            @Html.TextBoxFor(model => model.ImageFileName)
             @Html.ValidationMessageFor(model => model.ImageFileName)
         </div>
 
@@ -87,7 +117,7 @@
         </div>
 
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value="Create" />
         </p>
     </fieldset>
 }

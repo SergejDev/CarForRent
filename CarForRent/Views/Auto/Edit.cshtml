@@ -1,16 +1,18 @@
 ﻿@model CarForRent.Models.Auto
 
 @{
-    ViewBag.Title = "Add auto";
+    ViewBag.Title = "Edit auto";
 }
 
-<h2>Add auto</h2>
+<h2>Edit auto</h2>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
 
     <fieldset>
         <legend>Auto</legend>
+
+        @Html.HiddenFor(model => model.AutoId)
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Mark)
@@ -29,18 +31,26 @@
         </div>
 
         <div class="editor-label">
+            @Html.LabelFor(model => model.AutoClass)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.AutoClassId, (SelectList)ViewBag.AutoClassItems)
+            @Html.ValidationMessageFor(model => model.AutoClass)
+        </div>
+
+        <div class="editor-label">
             @Html.LabelFor(model => model.EngineType)
         </div>
         <div class="editor-field">
-            @Html.DropDownListFor(model => model.EngineType.EngineTypeId, (List<SelectListItem>)ViewBag.EngineTypeItems)
+            @Html.DropDownListFor(model => model.EngineTypeId, (SelectList)ViewBag.EngineTypeItems)
             @Html.ValidationMessageFor(model => model.EngineType)
         </div>
-
+        
         <div class="editor-label">
             @Html.LabelFor(model => model.GearboxType)
         </div>
         <div class="editor-field">
-            @Html.DropDownListFor(model => model.GearboxType.GearboxTypeId, (List<SelectListItem>)ViewBag.GearboxTypeItems)
+            @Html.DropDownListFor(model => model.GearboxTypeId, (SelectList)ViewBag.GearboxTypeItems)
             @Html.ValidationMessageFor(model => model.GearboxType)
         </div>
 
@@ -48,7 +58,7 @@
             @Html.LabelFor(model => model.FuelType)
         </div>
         <div class="editor-field">
-            @Html.DropDownListFor(model => model.FuelType.FuelTypeId, (List<SelectListItem>)ViewBag.FuelTypeItems)
+            @Html.DropDownListFor(model => model.FuelTypeId, (SelectList)ViewBag.FuelTypeItems)
             @Html.ValidationMessageFor(model => model.FuelType)
         </div>
 
@@ -109,7 +119,7 @@
         </div>
 
         <p>
-            <input type="submit" value="Create" />
+            <input type="submit" value="Save" />
         </p>
     </fieldset>
 }

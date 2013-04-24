@@ -22,7 +22,7 @@ namespace CarForRent.Controllers.Cms
 
         public ActionResult Index()
         {
-            return View(db.Autos.ToList());
+            return View("../Auto/Index", db.Autos.ToList());
         }
 
         //
@@ -35,7 +35,7 @@ namespace CarForRent.Controllers.Cms
             {
                 return HttpNotFound();
             }
-            return View(auto);
+            return View("../Auto/Details", auto);
         }
 
         //
@@ -43,11 +43,14 @@ namespace CarForRent.Controllers.Cms
 
         public ActionResult Create()
         {
-            SelectedListBuilder listBuilder = new SelectedListBuilder();
-            ViewBag.EngineTypeItems = listBuilder.EngineTypeListItems();
-            ViewBag.GearboxTypeItems = listBuilder.GearboxTypeListItems();
-            ViewBag.FuelTypeItems = listBuilder.FuelTypeListItems();
-            return View();
+            //SelectedListBuilder listBuilder = new SelectedListBuilder();
+            //ViewBag.AutoClassItems = listBuilder.AutoClassListItems();
+            //ViewBag.EngineTypeItems = listBuilder.EngineTypeListItems();
+            //ViewBag.GearboxTypeItems = listBuilder.GearboxTypeListItems();
+            //ViewBag.FuelTypeItems = listBuilder.FuelTypeListItems();
+
+            ComboBoxPopulator.PopulateAutoComboBoxes(ViewBag);
+            return View("../Auto/Create");
         }
 
         //
@@ -62,8 +65,18 @@ namespace CarForRent.Controllers.Cms
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            else
+            {
+                //SelectedListBuilder listBuilder = new SelectedListBuilder();
+                //ViewBag.AutoClassItems = listBuilder.AutoClassListItems();
+                //ViewBag.EngineTypeItems = listBuilder.EngineTypeListItems();
+                //ViewBag.GearboxTypeItems = listBuilder.GearboxTypeListItems();
+                //ViewBag.FuelTypeItems = listBuilder.FuelTypeListItems();
 
-            return View(auto);
+                ComboBoxPopulator.PopulateAutoComboBoxes(ViewBag);
+            }
+
+            return View("../Auto/Create", auto);
         }
 
         //
@@ -76,7 +89,8 @@ namespace CarForRent.Controllers.Cms
             {
                 return HttpNotFound();
             }
-            return View(auto);
+            ComboBoxPopulator.PopulateAutoComboBoxes(ViewBag);
+            return View("../Auto/Edit", auto);
         }
 
         //
@@ -91,7 +105,8 @@ namespace CarForRent.Controllers.Cms
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(auto);
+            ComboBoxPopulator.PopulateAutoComboBoxes(ViewBag);
+            return View("../Auto/Edit", auto);
         }
 
         //
@@ -104,7 +119,7 @@ namespace CarForRent.Controllers.Cms
             {
                 return HttpNotFound();
             }
-            return View(auto);
+            return View("../Auto/Delete", auto);
         }
 
         //

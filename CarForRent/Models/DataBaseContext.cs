@@ -13,6 +13,31 @@ namespace CarForRent.Models
         {
         }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            //modelBuilder.Entity<Auto>()
+            //    .HasRequired(a => a.AutoClass)
+            //    .WithRequiredPrincipal(a => a.Auto)
+            //    ;//.Map(a => a.MapKey("AutoClassId"));
+
+            //modelBuilder.Entity<Auto>()
+            //    .HasRequired(a => a.EngineType)
+            //    .WithRequiredPrincipal(a => a.Auto)
+            //    ;//.Map(a => a.MapKey("EngineTypeId"));
+
+            //modelBuilder.Entity<Auto>()
+            //    .HasRequired(a => a.GearboxType)
+            //    .WithRequiredPrincipal(a => a.Auto)
+            //    ;//.Map(a => a.MapKey("GearboxTypeId"));
+
+            //modelBuilder.Entity<Auto>()
+            //    .HasRequired(a => a.FuelType)
+            //    .WithRequiredPrincipal(a => a.Auto)
+            //    ;//.Map(a => a.MapKey("FuelTypeId"));
+
+            base.OnModelCreating(modelBuilder);
+        }
+
         public DbSet<UserProfile> UserProfiles { get; set; }
 
         public DbSet<Auto> Autos { get; set; }

@@ -59,8 +59,6 @@ namespace CarForRent.Controllers.Cms
         {
             if (ModelState.IsValid)
             {
-                userprofile.ClientInformation.ClientId = userprofile.UserId;
-                db.Entry(userprofile.ClientInformation).State = EntityState.Modified;
                 db.Entry(userprofile).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
