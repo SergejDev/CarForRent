@@ -232,6 +232,10 @@
     <Compile Include="Migrations\201304241948305_NewVar.Designer.cs">
       <DependentUpon>201304241948305_NewVar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201304251756032_Fix1.cs" />
+    <Compile Include="Migrations\201304251756032_Fix1.Designer.cs">
+      <DependentUpon>201304251756032_Fix1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Auto.cs" />
@@ -336,6 +340,7 @@
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\ValidationFixes.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -440,6 +445,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201304241948305_NewVar.resx">
       <DependentUpon>201304241948305_NewVar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304251756032_Fix1.resx">
+      <DependentUpon>201304251756032_Fix1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

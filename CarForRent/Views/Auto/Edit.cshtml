@@ -2,9 +2,11 @@
 
 @{
     ViewBag.Title = "Edit auto";
+    Html.EnableClientValidation(false);
 }
 
 <h2>Edit auto</h2>
+
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)

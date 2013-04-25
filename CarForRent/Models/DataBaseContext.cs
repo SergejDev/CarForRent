@@ -44,7 +44,7 @@ namespace CarForRent.Models
 
         public DbSet<AutoClass> AutoClasses { get; set; }
 
-        public DbSet<EngineType> EngineTypes { get; set; }
+        public DbSet<EngineType> EngineTypes { get; set; } 
 
         public DbSet<FuelType> FuelTypes { get; set; }
 
