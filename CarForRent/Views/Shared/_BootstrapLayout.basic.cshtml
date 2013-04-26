@@ -7,7 +7,10 @@
     <meta charset="utf-8">
     <title>@ViewBag.Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="@Styles.Url("~/content/css")" rel="stylesheet"/>
+    <link href="@Styles.Url("~/Content/css")" rel="stylesheet"/>
+    @Styles.Render("~/Content/AutoStyle.css") 
+    <script src="@Scripts.Url("~/Scripts/ValidationFixes.js")" type="text/javascript"></script>
+    <script src="@Scripts.Url("~/Scripts/jquery-1.9.1.min.js")" type="text/javascript"></script>
     @RenderSection("head", required: false)
     @Html.Partial("_html5shiv")
     @* favicons and touch icons go here *@
@@ -21,7 +24,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
-                <a class="brand" href="~/Home/Index" title="Car For Rent">Car For Rent</a>
+                <a class="brand" href="~/Auto/Index" title="Car For Rent">Car For Rent</a>
                 <div class="nav-collapse collapse">
                     <div class="pull-right">
                         <ul class="nav">
@@ -44,6 +47,7 @@
         </footer>
     </div>
     @Scripts.Render("~/js")
+
     @RenderSection("Scripts", required: false)
 </body>
 </html>
