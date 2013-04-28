@@ -3,62 +3,81 @@
 @{
     ViewBag.Title = "Auto management";
 }
+<div id="headImage">
+    <header id="overview" class="jumbotron subhead">
+        <div class="container">
+            <h1>Auto management</h1>
+            <p class="lead">
+                This is an online car rental system. 
+                On our website you can order a car for every taste at an affordable price.
+            </p>
+        </div>
+    </header>
+</div>
 
-<h2>Auto management</h2>
-<ul class ="CarsList">
-    @foreach (var item in Model)
-    {
-        <li>
-            <div class="Car">
-            <div class = "CarsImageDiv">
-                @{
-                    object path = System.Configuration.ConfigurationManager.AppSettings["localAddress"] +
-                                  "/AutoImages/" + @item.ImageFileName;
-                    <img class = "CarsImage" src="@path"/> 
-                }
-            </div>
-            <div class="CarRecordDiv">
-                <ul class="CarRecord">
-                    <li>
-                        <input type="hidden" class="CarId" value="@item.AutoId" />
-                    </li>
+<hr>
 
-                    <li class="AutoInformation">
-                        <div class="DivHeaders"> Mark: </div>
-                        <div>
-                        @Html.DisplayFor(modelItem => item.Mark)
+<div class="container-fluid">
+    <div class="span3 SearchingPanel">
+        <h3>Searching panel </h3>
+    </div>
+
+    <div class="span9 AutoList">
+        <h3>Auto list: </h3>
+        <ul class="CarsList">
+            @foreach (var item in Model)
+            {
+                <li>
+                    <div class="Car">
+                        <div class="CarsImageDiv">
+                            @{
+                object path = System.Configuration.ConfigurationManager.AppSettings["localAddress"] +
+                              "/AutoImages/" + @item.ImageFileName;
+                                <img class = "CarsImage" src="@path"/> 
+                            }
                         </div>
-                    </li>
-                    <li class="AutoInformation">
-                        <div class="DivHeaders"> Model: </div>
-                        <div>
-                            @Html.DisplayFor(modelItem => item.Model)
-                        </div>
-                    </li>
-                    <li class="AutoInformation">
-                        <div class="DivHeaders"> Class auto: </div>
-                        <div>@Html.DisplayFor(modelItme => item.AutoClass.ClassTitle)</div>
-                    </li>
-                    <li class="AutoInformation">
-                        <div class="DivHeaders"> Price: </div>
-                        <div>@Html.DisplayFor(modelItem => item.Price)</div>
-                    </li>
-                    <li class="AutoInformation">
-                        <div class="DivHeaders"> Count: </div>
-                       <div> @Html.DisplayFor(modelItem => item.AutoCount)</div>
-                    </li>
-                    <li class="AutoInformation">
-                        <input class="PushButton" id="@item.AutoId" type="button" value="Order"/>
-                    </li>
-                </ul>
-            </div>
-                </div>
-        </li>
-    }
+                        <div class="CarRecordDiv">
+                            <ul class="CarRecord">
+                                <li>
+                                    <input type="hidden" class="CarId" value="@item.AutoId" />
+                                </li>
 
-</ul>
+                                <li class="AutoInformation">
+                                    <div class="DivHeaders">Mark: </div>
+                                    <div>
+                                        @Html.DisplayFor(modelItem => item.Mark)
+                                    </div>
+                                </li>
+                                <li class="AutoInformation">
+                                    <div class="DivHeaders">Model: </div>
+                                    <div>
+                                        @Html.DisplayFor(modelItem => item.Model)
+                                    </div>
+                                </li>
+                                <li class="AutoInformation">
+                                    <div class="DivHeaders">Class auto: </div>
+                                    <div>@Html.DisplayFor(modelItme => item.AutoClass.ClassTitle)</div>
+                                </li>
+                                <li class="AutoInformation">
+                                    <div class="DivHeaders">Price: </div>
+                                    <div>@Html.DisplayFor(modelItem => item.Price)</div>
+                                </li>
+
+                                <li class="AutoInformation">
+                                    <input class="PushButton" id="@item.AutoId" type="button" value="Order"/>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            }
+
+        </ul>
+    </div>
+</div>
+
 
 @section Scripts
 {
-    <script src="@Scripts.Url("~/Scripts/AutoBitch.js")" type="text/javascript"></script>   
+    <script src="@Scripts.Url("~/Scripts/AutoBitch.js")" type="text/javascript"></script>
 }

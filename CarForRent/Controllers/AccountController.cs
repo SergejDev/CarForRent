@@ -54,7 +54,7 @@ namespace CarForRent.Controllers
         {
             WebSecurity.Logout();
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Auto");
         }
 
         //
@@ -82,7 +82,7 @@ namespace CarForRent.Controllers
                     WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
                     Roles.AddUserToRole(model.UserName, "User");
                     WebSecurity.Login(model.UserName, model.Password);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Auto");
                 }
                 catch (MembershipCreateUserException e)
                 {
@@ -338,7 +338,7 @@ namespace CarForRent.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Auto");
             }
         }
 

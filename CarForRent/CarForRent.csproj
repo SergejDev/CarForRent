@@ -174,7 +174,6 @@
     <Compile Include="Controllers\Cms\CmsAutoController.cs" />
     <Compile Include="Controllers\Cms\CmsOrderController.cs" />
     <Compile Include="Controllers\Cms\CmsUserProfileController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -261,6 +260,8 @@
   <ItemGroup>
     <Content Include="AutoImages\1.jpg" />
     <Content Include="AutoImages\2.gif" />
+    <Content Include="AutoImages\auto1.jpg" />
+    <Content Include="AutoImages\auto2.jpg" />
     <Content Include="AutoImages\tumblr_m914vuSNOb1ro8b0u.jpg" />
     <Content Include="Content\AutoStyle.css" />
     <Content Include="Content\body.css" />

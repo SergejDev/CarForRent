@@ -15,7 +15,7 @@
 }
 
 .AutoInformation {
-    padding-left: 55px;
+    padding-left: 45px;
 }
 
 .Car > div{
@@ -24,10 +24,22 @@
 
 .CarsList > li{
     margin-bottom: 20px;
-    border: 1px solid;
+    border: 3px solid;
     padding: 10px 10px 10px 10px;
-    width: 1000px;
+    width: 800px;
     border-radius: 10px;
+    background-color: #272b30;
+}
+
+    .CarsList > li:hover
+    {
+        border-color: cornflowerblue;
+        cursor: pointer;
+    }
+
+.AutoList>h3, .SearchingPanel>h3 {
+    padding-left: 30px;
+    color:#272b30;
 }
 
 .CarsList {
@@ -50,13 +62,41 @@
     margin-left: 0px;
 }
 
-.ElementsBlock > li{
-    padding-top: 40px;
-    border-bottom: 2px solid;
-    border-color: gray;
-    width: 300px;
-    padding-bottom: 10px;
+.SearchingPanel {
+    height: 600px;
+    border: 1px solid;
+    border-radius: 30px;
+    background-color: #E0E0E0 ;
 }
+
+.SearchingPanel:hover {
+    border-color: cornflowerblue;
+}
+
+.AutoList {
+    border: 1px solid;
+    border-radius: 30px;
+    height: 1000px;
+    background-color: #E0E0E0 ;
+}
+
+.AutoList:hover {
+    border-color: cornflowerblue;
+}
+
+.ElementsBlock > li{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    color: #272b30;
+    background-color: #e0e0e0;
+    margin-top: 30px;
+    padding-left: 30px;
+    width: 500px;
+    border-radius: 10px;
+}
+
+
 
 .displayLabel {
     font-weight: bold;
@@ -66,4 +106,47 @@
 .PushButton {
     padding: 5px 15px 5px 15px;
     margin-bottom: 10px;
+}
+
+#overview>div {
+    
+}
+
+body {
+    background-color: #272B30;
+    color: #C8C8C8;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+}
+
+
+
+#overview {
+    background-color: #E0E0E0;
+    border-radius: 10px;
+
+}
+
+#overview> .container > h1, #overview>.container> p {
+    color:#272b30;
+    
+}
+
+#headImage {
+    background-image: url("/AutoImages/auto1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 400px;
+}
+
+ul, ol{
+    list-style: none outside none;
+}
+
+.loginFieldset {
+    padding-bottom: 30px;
+}
+
+#loginForm {
+    padding-bottom: 150px;
 }

@@ -4,20 +4,20 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Auto details</h2>
 
-<fieldset>
-    <legend>Auto</legend>
-        
-        <div class="displayField">
+
+<div class="container">
+    <h2>Auto details</h2>
+
+    <div class="displayField">
             
-            @{
-                object path = System.Configuration.ConfigurationManager.AppSettings["localAddress"] + "/AutoImages/" + Model.ImageFileName;
-                <img class = "CarsImage" src="@path"/> 
-            }
+        @{
+            object path = System.Configuration.ConfigurationManager.AppSettings["localAddress"] + "/AutoImages/" + Model.ImageFileName;
+            <img class = "img-rounded" src="@path"/> 
+        }
 
-        </div>
-        <ul class="ElementsBlock">
+    </div>
+    <ul class="ElementsBlock">
         <li>
             <div class="displayLabel">
                 Mark auto:
@@ -116,7 +116,7 @@
         </li>
                
     </ul>
-</fieldset>
+</div>
 <p>
     @Html.ActionLink("Back to Home", "Index")
 </p>
