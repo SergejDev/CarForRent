@@ -42,5 +42,17 @@ namespace CarForRent.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
+
+        public ActionResult About()
+        {
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
+            return View();
+        }
+
+
     }
 }

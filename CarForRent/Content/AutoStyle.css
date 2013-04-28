@@ -26,8 +26,10 @@
     margin-bottom: 20px;
     border: 1px solid;
     padding: 10px 10px 10px 10px;
-    width: 1000px;
+    width: 840px;
     border-radius: 10px;
+    border-color: gray;
+    background-color: lightblue;
 }
 
 .CarsList {
@@ -52,8 +54,6 @@
 
 .ElementsBlock > li{
     padding-top: 40px;
-    border-bottom: 2px solid;
-    border-color: gray;
     width: 300px;
     padding-bottom: 10px;
 }
@@ -66,4 +66,10 @@
 .PushButton {
     padding: 5px 15px 5px 15px;
     margin-bottom: 10px;
+}
+
+.SearchingPanel {
+    float: left;
+    height: 600px;
+    border: 1px solid;
 }

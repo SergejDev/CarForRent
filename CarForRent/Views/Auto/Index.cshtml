@@ -5,58 +5,61 @@
 }
 
 <h2>Auto management</h2>
-<ul class ="CarsList">
-    @foreach (var item in Model)
-    {
-        <li>
-            <div class="Car">
-            <div class = "CarsImageDiv">
-                @{
-                    object path = System.Configuration.ConfigurationManager.AppSettings["localAddress"] +
-                                  "/AutoImages/" + @item.ImageFileName;
-                    <img class = "CarsImage" src="@path"/> 
-                }
-            </div>
-            <div class="CarRecordDiv">
-                <ul class="CarRecord">
-                    <li>
-                        <input type="hidden" class="CarId" value="@item.AutoId" />
-                    </li>
+<div class="SearchingPanel container-fluid">
+    <input id="Text1" type="text" />
+</div>
 
-                    <li class="AutoInformation">
-                        <div class="DivHeaders"> Mark: </div>
-                        <div>
-                        @Html.DisplayFor(modelItem => item.Mark)
-                        </div>
-                    </li>
-                    <li class="AutoInformation">
-                        <div class="DivHeaders"> Model: </div>
-                        <div>
-                            @Html.DisplayFor(modelItem => item.Model)
-                        </div>
-                    </li>
-                    <li class="AutoInformation">
-                        <div class="DivHeaders"> Class auto: </div>
-                        <div>@Html.DisplayFor(modelItme => item.AutoClass.ClassTitle)</div>
-                    </li>
-                    <li class="AutoInformation">
-                        <div class="DivHeaders"> Price: </div>
-                        <div>@Html.DisplayFor(modelItem => item.Price)</div>
-                    </li>
-                    <li class="AutoInformation">
-                        <div class="DivHeaders"> Count: </div>
-                       <div> @Html.DisplayFor(modelItem => item.AutoCount)</div>
-                    </li>
-                    <li class="AutoInformation">
-                        <input class="PushButton" id="@item.AutoId" type="button" value="Order"/>
-                    </li>
-                </ul>
-            </div>
-                </div>
-        </li>
-    }
+ <div class="container">
+ <ul class ="CarsList">
+     @foreach (var item in Model)
+     {
+         <li>
+             <div class="Car">
+                 <div class = "CarsImageDiv">
+                     @{
+                         object path = System.Configuration.ConfigurationManager.AppSettings["localAddress"] +
+                                       "/AutoImages/" + @item.ImageFileName;
+                         <img class = "CarsImage" src="@path"/> 
+                     }
+                 </div>
+                 <div class="CarRecordDiv">
+                     <ul class="CarRecord">
+                         <li>
+                             <input type="hidden" class="CarId" value="@item.AutoId" />
+                         </li>
 
-</ul>
+                         <li class="AutoInformation">
+                             <div class="DivHeaders" > Mark: </div>
+                             <div>
+                                 @Html.DisplayFor(modelItem => item.Mark)
+                             </div>
+                         </li>
+                         <li class="AutoInformation">
+                             <div class="DivHeaders"> Model: </div>
+                             <div>
+                                 @Html.DisplayFor(modelItem => item.Model)
+                             </div>
+                         </li>
+                         <li class="AutoInformation">
+                             <div class="DivHeaders"> Class auto: </div>
+                             <div>@Html.DisplayFor(modelItme => item.AutoClass.ClassTitle)</div>
+                         </li>
+                         <li class="AutoInformation">
+                             <div class="DivHeaders"> Price: </div>
+                             <div>@Html.DisplayFor(modelItem => item.Price)</div>
+                         </li>
+                         <li class="AutoInformation">
+                             @Html.ActionLink("Order", "Create", "Order", item.AutoId);
+                             <input class="ButtonOrder btn btn-inverse btn btn-primary" id="@item.AutoId" type="button" value="Order" />
+                         </li>
+                     </ul>
+                 </div>
+             </div>
+         </li>
+     }
+
+ </ul>
+     </div>
 
 @section Scripts
 {

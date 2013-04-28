@@ -14,8 +14,8 @@ namespace BootstrapMvcSample
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            routes.MapNavigationRoute<HomeController>("About", c => c.About());
-            routes.MapNavigationRoute<HomeController>("Contact", c => c.Contact());
+            routes.MapNavigationRoute<AutoController>("About", c => c.About());
+            routes.MapNavigationRoute<AutoController>("Contact", c => c.Contact());
         }
     }
 }
