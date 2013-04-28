@@ -5,102 +5,60 @@
 }
 
 <h2>Auto management</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Mark)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Model)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AutoClass)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EngineType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GearboxType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FuelType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Number)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.YearOfManufacture)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PlacesCount)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EngineVolume)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImageFileName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AutoCount)
-        </th>
-        <th></th>
-    </tr>
-
+<ul class ="CarsList">
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Mark)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Model)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItme => item.AutoClass.ClassTitle)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItme => item.EngineType.EngineTypeTitle)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItme => item.GearboxType.GearboxTypeTitle)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItme => item.FuelType.FuelTypeTitle)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Number)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.YearOfManufacture)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlacesCount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EngineVolume)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageFileName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AutoCount)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.AutoId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.AutoId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.AutoId })
-            </td>
-        </tr>
+        <li>
+            <div class="Car">
+            <div class = "CarsImageDiv">
+                @{
+                    object path = System.Configuration.ConfigurationManager.AppSettings["localAddress"] +
+                                  "/AutoImages/" + @item.ImageFileName;
+                    <img class = "CarsImage" src="@path"/> 
+                }
+            </div>
+            <div class="CarRecordDiv">
+                <ul class="CarRecord">
+                    <li>
+                        <input type="hidden" class="CarId" value="@item.AutoId" />
+                    </li>
+
+                    <li class="AutoInformation">
+                        <div class="DivHeaders"> Mark: </div>
+                        <div>
+                        @Html.DisplayFor(modelItem => item.Mark)
+                        </div>
+                    </li>
+                    <li class="AutoInformation">
+                        <div class="DivHeaders"> Model: </div>
+                        <div>
+                            @Html.DisplayFor(modelItem => item.Model)
+                        </div>
+                    </li>
+                    <li class="AutoInformation">
+                        <div class="DivHeaders"> Class auto: </div>
+                        <div>@Html.DisplayFor(modelItme => item.AutoClass.ClassTitle)</div>
+                    </li>
+                    <li class="AutoInformation">
+                        <div class="DivHeaders"> Price: </div>
+                        <div>@Html.DisplayFor(modelItem => item.Price)</div>
+                    </li>
+                    <li class="AutoInformation">
+                        <div class="DivHeaders"> Count: </div>
+                       <div> @Html.DisplayFor(modelItem => item.AutoCount)</div>
+                    </li>
+                    <li class="AutoInformation">
+                        <input class="PushButton" id="@item.AutoId" type="button" value="Order"/>
+                    </li>
+                </ul>
+            </div>
+                </div>
+        </li>
     }
 
-</table>
+</ul>
+
+@section Scripts
+{
+    <script src="@Scripts.Url("~/Scripts/AutoBitch.js")" type="text/javascript"></script>   
+}

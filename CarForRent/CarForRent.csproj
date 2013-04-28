@@ -169,6 +169,7 @@
     <Compile Include="BootstrapSupport\ControlGroupExtensions.cs" />
     <Compile Include="BootstrapSupport\ViewHelperExtensions.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AutoController.cs" />
     <Compile Include="Controllers\BootstrapBaseController.cs" />
     <Compile Include="Controllers\Cms\CmsAutoController.cs" />
     <Compile Include="Controllers\Cms\CmsBaseController.cs" />
@@ -254,6 +255,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AutoImages\1.jpg" />
+    <Content Include="AutoImages\2.gif" />
+    <Content Include="AutoImages\tumblr_m914vuSNOb1ro8b0u.jpg" />
+    <Content Include="Content\AutoStyle.css" />
     <Content Include="Content\body.css" />
     <Content Include="Content\bootstrap-mvc-validation.css" />
     <Content Include="Content\bootstrap-responsive.css" />
@@ -318,6 +323,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\AutoBitch.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\html5shiv.js" />
@@ -348,7 +354,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Content\Site.css" />
+    <Content Include="Controllers\Site.css" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
@@ -395,9 +401,6 @@
     <Content Include="Views\CmsUserProfile\Delete.cshtml" />
     <Content Include="Views\Auto\Index.cshtml" />
     <Content Include="Views\Auto\Details.cshtml" />
-    <Content Include="Views\Auto\Create.cshtml" />
-    <Content Include="Views\Auto\Edit.cshtml" />
-    <Content Include="Views\Auto\Delete.cshtml" />
     <Content Include="Views\CmsBase\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
