@@ -1,0 +1,50 @@
+﻿@model CarForRent.Models.Order
+
+@{
+    ViewBag.Title = "Order details";
+}
+
+<h2>Order details</h2>
+
+<fieldset>
+    <legend>Order</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OrderDuration)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OrderDuration)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OrderDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OrderDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsOpen)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsOpen)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Auto.Mark)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Auto.Mark)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Client.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Client.UserName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.OrderId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

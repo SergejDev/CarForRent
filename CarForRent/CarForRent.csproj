@@ -172,9 +172,10 @@
     <Compile Include="Controllers\AutoController.cs" />
     <Compile Include="Controllers\BootstrapBaseController.cs" />
     <Compile Include="Controllers\Cms\CmsAutoController.cs" />
-    <Compile Include="Controllers\Cms\CmsBaseController.cs" />
+    <Compile Include="Controllers\Cms\CmsOrderController.cs" />
     <Compile Include="Controllers\Cms\CmsUserProfileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -237,11 +238,14 @@
     <Compile Include="Migrations\201304251756032_Fix1.Designer.cs">
       <DependentUpon>201304251756032_Fix1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201304260726215_OredersFix.cs" />
+    <Compile Include="Migrations\201304260726215_OredersFix.Designer.cs">
+      <DependentUpon>201304260726215_OredersFix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Auto.cs" />
     <Compile Include="Models\AutoClass.cs" />
-    <Compile Include="Models\Client.cs" />
     <Compile Include="Models\DataBaseContext.cs" />
     <Compile Include="Models\EngineType.cs" />
     <Compile Include="Models\FuelType.cs" />
@@ -379,8 +383,6 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
@@ -402,6 +404,14 @@
     <Content Include="Views\Auto\Index.cshtml" />
     <Content Include="Views\Auto\Details.cshtml" />
     <Content Include="Views\CmsBase\Index.cshtml" />
+    <Content Include="Views\Auto\Create.cshtml" />
+    <Content Include="Views\Auto\Edit.cshtml" />
+    <Content Include="Views\Auto\Delete.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\Order\Details.cshtml" />
+    <Content Include="Views\Order\Create.cshtml" />
+    <Content Include="Views\CmsOrder\Index.cshtml" />
+    <Content Include="Views\CmsOrder\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -451,6 +461,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201304251756032_Fix1.resx">
       <DependentUpon>201304251756032_Fix1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304260726215_OredersFix.resx">
+      <DependentUpon>201304260726215_OredersFix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

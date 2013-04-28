@@ -12,16 +12,28 @@ namespace CarForRent.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int OrderId { get; set; }
 
+        [Display(Name = "Order duration")]
         public int OrderDuration { get; set; }
 
         [DataType(DataType.DateTime)]
+        [Display(Name = "Order date")]
         public DateTime OrderDate { get; set; }
 
         [Required]
+        [Display(Name = "Current")]
         public bool IsOpen { get; set; }
 
-        public virtual ICollection<Auto> Autos { get; set; }
 
-        public virtual ICollection<UserProfile> Clients { get; set; }
+        public int AutoId { get; set; }
+
+        [ForeignKey("AutoId")]
+        [Display(Name = "Auto")]
+        public virtual Auto Auto { get; set; }
+
+
+        public int ClientId { get; set; }
+
+        [ForeignKey("ClientId")]
+        public virtual UserProfile Client { get; set; }
     }
 }
