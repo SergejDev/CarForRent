@@ -64,7 +64,22 @@
                                 </li>
 
                                 <li class="AutoInformation">
-                                    <input class="PushButton" id="@item.AutoId" type="button" value="Order"/>
+
+                                    <ul style="">
+                                        <li class="AutoInformation">
+                                            <input class="PushButton" id="@item.AutoId" type="button" value="Order"/>
+                                        </li>
+                                        @if (User.IsInRole("Administrator"))
+                                        {
+                                            <li class="AutoInformation">
+                                                @Html.ActionLink("Edit", "Edit", new { id = item.AutoId })
+                                            </li>
+                                    
+                                            <li class="AutoInformation">
+                                                @Html.ActionLink("Delete", "Delete", new { id = item.AutoId })
+                                            </li>
+                                        }
+                                    </ul>
                                 </li>
                             </ul>
                         </div>
