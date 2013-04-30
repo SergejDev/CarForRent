@@ -1,12 +1,9 @@
 ﻿@model IEnumerable<CarForRent.Models.Auto>
 
-@{
-    ViewBag.Title = "Auto management";
-}
 <div id="headImage">
     <header id="overview" class="jumbotron subhead">
         <div class="container">
-            <h1>Auto management</h1>
+            <h1>@ViewBag.Title</h1>
             <p class="lead">
                 This is an online car rental system. 
                 On our website you can order a car for every taste at an affordable price.
@@ -23,18 +20,18 @@
     </div>
 
     <div class="span9 AutoList">
-        <h3>Auto list: </h3>
+        <h3>Auto list</h3>
+        @if (User.IsInRole("Administrator") && Html.ViewContext.Controller.ControllerContext.RouteData.GetRequiredString("controller") == "CmsAuto")
+        {
+            @Html.ActionLink("Add auto", "Create", "CmsAuto", null, new { @class = "btn" })
+        }
         <ul class="CarsList">
             @foreach (var item in Model)
             {
                 <li>
                     <div class="Car">
                         <div class="CarsImageDiv">
-                            @{
-                object path = System.Configuration.ConfigurationManager.AppSettings["localAddress"] +
-                              "/AutoImages/" + @item.ImageFileName;
-                                <img class = "CarsImage" src="@path"/> 
-                            }
+                            <img class="img-rounded" src="@CarForRent.Helpers.UrlBuilder.BuildAutoImageUrl(item.ImageFileName)"/>
                         </div>
                         <div class="CarRecordDiv">
                             <ul class="CarRecord">
@@ -63,23 +60,14 @@
                                     <div>@Html.DisplayFor(modelItem => item.Price)</div>
                                 </li>
 
-                                <li class="AutoInformation">
+                                <li class="AutoInformation" style="vertical-align: middle">
 
-                                    <ul style="">
-                                        <li class="AutoInformation">
-                                            <input class="PushButton" id="@item.AutoId" type="button" value="Order"/>
-                                        </li>
-                                        @if (User.IsInRole("Administrator"))
-                                        {
-                                            <li class="AutoInformation">
-                                                @Html.ActionLink("Edit", "Edit", new { id = item.AutoId })
-                                            </li>
-                                    
-                                            <li class="AutoInformation">
-                                                @Html.ActionLink("Delete", "Delete", new { id = item.AutoId })
-                                            </li>
-                                        }
-                                    </ul>
+                                    @Html.ActionLink("Order", "Create", "Order", new { id = item.AutoId }, new { @class = "btn linkButton" })
+                                    @if (User.IsInRole("Administrator") && Html.ViewContext.Controller.ControllerContext.RouteData.GetRequiredString("controller") == "CmsAuto")
+                                    {
+                                        @Html.ActionLink("Edit", "Edit", "CmsAuto", new { id = item.AutoId }, new { @class = "btn linkButton" })
+                                        @Html.ActionLink("Delete", "Delete", "CmsAuto", new { id = item.AutoId }, new { @class = "btn linkButton" })
+                                    }
                                 </li>
                             </ul>
                         </div>

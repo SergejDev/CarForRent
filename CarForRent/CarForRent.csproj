@@ -180,7 +180,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ComboBoxPopulator.cs" />
+    <Compile Include="Helpers\CustomValidators.cs" />
     <Compile Include="Helpers\SelectedListBuilder.cs" />
+    <Compile Include="Helpers\UrlBuilder.cs" />
+    <Compile Include="Helpers\UrlConstants.cs" />
     <Compile Include="Migrations\201304162054247_AddMainTables.cs" />
     <Compile Include="Migrations\201304162054247_AddMainTables.Designer.cs">
       <DependentUpon>201304162054247_AddMainTables.cs</DependentUpon>
@@ -258,11 +261,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AutoImages\1.jpg" />
-    <Content Include="AutoImages\2.gif" />
-    <Content Include="AutoImages\auto1.jpg" />
-    <Content Include="AutoImages\auto2.jpg" />
-    <Content Include="AutoImages\tumblr_m914vuSNOb1ro8b0u.jpg" />
     <Content Include="Content\AutoStyle.css" />
     <Content Include="Content\body.css" />
     <Content Include="Content\bootstrap-mvc-validation.css" />

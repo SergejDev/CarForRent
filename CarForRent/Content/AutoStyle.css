@@ -5,9 +5,11 @@
 }
 
 
-.CarsImage
+.CarsImageDiv
 {
     height: 170px;
+    width: 210px;
+    overflow: hidden;
 }
 
 .CarRecord> li {
@@ -16,6 +18,7 @@
 
 .AutoInformation {
     padding-left: 45px;
+    
 }
 
 .Car > div{
@@ -38,8 +41,13 @@
     }
 
 .AutoList>h3, .SearchingPanel>h3 {
-    padding-left: 30px;
+    margin-left: 30px;
     color:#272b30;
+}
+
+.AutoList > a {
+    margin-bottom: 20px;
+    margin-left: 30px;
 }
 
 .CarsList {
@@ -76,7 +84,7 @@
 .AutoList {
     border: 1px solid;
     border-radius: 30px;
-    height: 1000px;
+    height: auto;
     background-color: #E0E0E0 ;
 }
 
@@ -133,7 +141,7 @@ body {
 }
 
 #headImage {
-    background-image: url("/AutoImages/auto1.jpg");
+    background-image: url("/Images/AutoImages/auto1.jpg");
     background-repeat: no-repeat;
     background-position: center;
     height: 400px;
@@ -149,4 +157,9 @@ ul, ol{
 
 #loginForm {
     padding-bottom: 150px;
+}
+
+.linkButton {
+    margin: 5px;
+    display: block;
 }

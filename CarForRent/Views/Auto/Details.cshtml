@@ -10,12 +10,7 @@
     <h2>Auto details</h2>
 
     <div class="displayField">
-            
-        @{
-            object path = System.Configuration.ConfigurationManager.AppSettings["localAddress"] + "/AutoImages/" + Model.ImageFileName;
-            <img class = "img-rounded" src="@path"/> 
-        }
-
+        <img class = "img-rounded" src="@CarForRent.Helpers.UrlBuilder.BuildAutoImageUrl(Model.ImageFileName)"/>
     </div>
     <ul class="ElementsBlock">
         <li>
@@ -104,7 +99,7 @@
             </div>
             <div class="displayField">
                 @Html.DisplayTextFor(model => model.FuelType.FuelTypeTitle)
-            </div>  
+            </div>
         </li>
         <li>
             <div class="displayLabel">
@@ -112,9 +107,9 @@
             </div>
             <div class="displayField">
                 @Html.DisplayTextFor(model => model.GearboxType.GearboxTypeTitle)
-            </div>   
+            </div>
         </li>
-               
+
     </ul>
 </div>
 <p>

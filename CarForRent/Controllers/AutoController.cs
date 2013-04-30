@@ -18,6 +18,7 @@ namespace CarForRent.Controllers
 
         public ActionResult Index()
         {
+            ViewBag.Title = "Auto rental system";
             var autos = db.Autos.Include(a => a.AutoClass).Include(a => a.EngineType).Include(a => a.GearboxType).Include(a => a.FuelType);
             return View(autos.ToList());
         }

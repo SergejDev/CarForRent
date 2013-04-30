@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using CarForRent.Models;
 using CarForRent.Filters;
 using CarForRent.Helpers;
+using System.IO;
 
 namespace CarForRent.Controllers.Cms
 {
@@ -22,6 +23,7 @@ namespace CarForRent.Controllers.Cms
 
         public ActionResult Index()
         {
+            ViewBag.Title = "Auto management";
             return View("../Auto/Index", db.Autos.ToList());
         }
 
@@ -43,12 +45,6 @@ namespace CarForRent.Controllers.Cms
 
         public ActionResult Create()
         {
-            //SelectedListBuilder listBuilder = new SelectedListBuilder();
-            //ViewBag.AutoClassItems = listBuilder.AutoClassListItems();
-            //ViewBag.EngineTypeItems = listBuilder.EngineTypeListItems();
-            //ViewBag.GearboxTypeItems = listBuilder.GearboxTypeListItems();
-            //ViewBag.FuelTypeItems = listBuilder.FuelTypeListItems();
-
             ComboBoxPopulator.PopulateAutoComboBoxes(ViewBag);
             return View("../Auto/Create");
         }
@@ -57,22 +53,21 @@ namespace CarForRent.Controllers.Cms
         // POST: /Auto/Create
 
         [HttpPost]
-        public ActionResult Create(Auto auto)
+        public ActionResult Create(Auto auto, HttpPostedFileBase file)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && CustomValidators.ValidateFile(file))
             {
+                var fileName = Path.GetFileName(file.FileName);
+                var path = Path.Combine(Server.MapPath(UrlConstants.UrlPrepender + UrlConstants.AutoImagesFilesDirectory), fileName);
+                file.SaveAs(path);
+
+                auto.ImageFileName = fileName;
                 db.Autos.Add(auto);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
             else
             {
-                //SelectedListBuilder listBuilder = new SelectedListBuilder();
-                //ViewBag.AutoClassItems = listBuilder.AutoClassListItems();
-                //ViewBag.EngineTypeItems = listBuilder.EngineTypeListItems();
-                //ViewBag.GearboxTypeItems = listBuilder.GearboxTypeListItems();
-                //ViewBag.FuelTypeItems = listBuilder.FuelTypeListItems();
-
                 ComboBoxPopulator.PopulateAutoComboBoxes(ViewBag);
             }
 
@@ -97,14 +92,26 @@ namespace CarForRent.Controllers.Cms
         // POST: /Auto/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(Auto auto)
+        public ActionResult Edit(Auto auto, HttpPostedFileBase file)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && CustomValidators.ValidateFile(file))
             {
+                var fileName = Path.GetFileName(file.FileName);
+                var path = Path.Combine(Server.MapPath(UrlConstants.UrlPrepender + UrlConstants.AutoImagesFilesDirectory), fileName);
+                file.SaveAs(path);
+
                 db.Entry(auto).State = EntityState.Modified;
+                auto.ImageFileName = fileName;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
+            //if (ModelState.IsValid)
+            //{
+            //    db.Entry(auto).State = EntityState.Modified;
+            //    db.SaveChanges();
+            //    return RedirectToAction("Index");
+            //}
             ComboBoxPopulator.PopulateAutoComboBoxes(ViewBag);
             return View("../Auto/Edit", auto);
         }
@@ -133,6 +140,7 @@ namespace CarForRent.Controllers.Cms
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
 
         protected override void Dispose(bool disposing)
         {

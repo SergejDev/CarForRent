@@ -8,11 +8,20 @@
 <h2>Edit auto</h2>
 
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm("Edit", "CmsAuto", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
     <fieldset>
         <legend>Auto</legend>
 
         @Html.HiddenFor(model => model.AutoId)
+
+        <div class="displayField">
+            <img class = "img-rounded" src="@CarForRent.Helpers.UrlBuilder.BuildAutoImageUrl(Model.ImageFileName)"/>
+        </div>
+
+        <div class="editor-field">
+            <input type="file" name="file" />
+        </div>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Mark)
@@ -102,13 +111,13 @@
             @Html.ValidationMessageFor(model => model.Price)
         </div>
 
-        <div class="editor-label">
+        @*<div class="editor-label">
             @Html.LabelFor(model => model.ImageFileName)
         </div>
         <div class="editor-field">
             @Html.TextBoxFor(model => model.ImageFileName)
             @Html.ValidationMessageFor(model => model.ImageFileName)
-        </div>
+        </div>*@
 
         <div class="editor-label">
             @Html.LabelFor(model => model.AutoCount)
