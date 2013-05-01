@@ -11,16 +11,14 @@
 @using (Html.BeginForm("Edit", "CmsAuto", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <fieldset>
-        <legend>Auto</legend>
 
         @Html.HiddenFor(model => model.AutoId)
-
         <div class="displayField">
             <img class = "img-rounded" src="@CarForRent.Helpers.UrlBuilder.BuildAutoImageUrl(Model.ImageFileName)"/>
         </div>
 
         <div class="editor-field">
-            <input type="file" name="file" />
+            <input type="file" name="file" class="btn"/>
         </div>
 
         <div class="editor-label">
@@ -110,15 +108,6 @@
             @Html.EditorFor(model => model.Price)
             @Html.ValidationMessageFor(model => model.Price)
         </div>
-
-        @*<div class="editor-label">
-            @Html.LabelFor(model => model.ImageFileName)
-        </div>
-        <div class="editor-field">
-            @Html.TextBoxFor(model => model.ImageFileName)
-            @Html.ValidationMessageFor(model => model.ImageFileName)
-        </div>*@
-
         <div class="editor-label">
             @Html.LabelFor(model => model.AutoCount)
         </div>
@@ -128,13 +117,13 @@
         </div>
 
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value="Save" class="btn"/>
         </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index", "CmsAuto", null, new { @class="btn"})
 </div>
 
 @section Scripts {

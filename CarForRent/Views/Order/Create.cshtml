@@ -1,16 +1,114 @@
 ﻿@model CarForRent.Models.Order
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Order";
 }
 
-<h2>Create</h2>
+<h2>Order</h2>
+
+<div class="container">
+    <h2>Auto details</h2>
+
+    <div class="displayField">
+        <img class = "img-rounded" src="@CarForRent.Helpers.UrlBuilder.BuildAutoImageUrl((String)ViewBag.CurrentAuto.ImageFileName)"/>
+    </div>
+    <ul class="ElementsBlock">
+        <li>
+            <div class="displayLabel">
+                Mark auto:
+            </div>
+            <div class="displayField">
+                @ViewBag.CurrentAuto.Mark
+            </div>
+        </li>
+        <li>
+            <div class="displayLabel">
+                Model auto:
+            </div>
+            <div class="displayField">
+                @ViewBag.CurrentAuto.Model
+            </div>
+        </li>
+        <li>
+            <div class="displayLabel">
+                Numbers auto:
+            </div>
+            <div class="displayField">
+                @ViewBag.CurrentAuto.Number
+            </div>
+        </li>
+        <li>
+            <div class="displayLabel">
+                Year of manufacture:
+            </div>
+            <div class="displayField">
+                @ViewBag.CurrentAuto.YearOfManufacture
+            </div>
+        </li>
+        <li>
+            <div class="displayLabel">
+                Places count:
+            </div>
+            <div class="displayField">
+                @ViewBag.CurrentAuto.PlacesCount
+            </div>
+        </li>
+        <li>
+            <div class="displayLabel">
+                Engine volume:
+            </div>
+            <div class="displayField">
+                @ViewBag.CurrentAuto.EngineVolume
+            </div>
+        </li>
+        <li>
+            <div class="displayLabel">
+                Price:
+            </div>
+            <div class="displayField">
+                @ViewBag.CurrentAuto.Price
+            </div>
+        </li>
+        <li>
+            <div class="displayLabel">
+                Engine type:
+            </div>
+            <div class="displayField">
+                @ViewBag.CurrentAuto.EngineType.EngineTypeTitle
+            </div>
+        </li>
+        <li>
+            <div class="displayLabel">
+                Auto class:
+            </div>
+            <div class="displayField">
+                @ViewBag.CurrentAuto.AutoClass.ClassTitle
+            </div>
+        </li>
+        <li>
+            <div class="displayLabel">
+                Fuel type:
+            </div>
+            <div class="displayField">
+                @ViewBag.CurrentAuto.FuelType.FuelTypeTitle
+            </div>
+        </li>
+        <li>
+            <div class="displayLabel">
+                Gearbox type:
+            </div>
+            <div class="displayField">
+                @ViewBag.CurrentAuto.GearboxType.GearboxTypeTitle
+            </div>
+        </li>
+    </ul>
+</div>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>Order</legend>
+        @Html.Hidden("AutoId", (int)ViewBag.CurrentAuto.AutoId)
 
         <div class="editor-label">
             @Html.LabelFor(model => model.OrderDuration)
@@ -19,31 +117,14 @@
             @Html.EditorFor(model => model.OrderDuration)
             @Html.ValidationMessageFor(model => model.OrderDuration)
         </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.OrderDate)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.OrderDate)
-            @Html.ValidationMessageFor(model => model.OrderDate)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.IsOpen)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.IsOpen)
-            @Html.ValidationMessageFor(model => model.IsOpen)
-        </div>
-
         <p>
-            <input type="submit" value="Create" />
+            <input type="submit" value="Order"  class="btn"/>
         </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index", "CmsAuto", null, new { @class="btn"})
 </div>
 
 @section Scripts {

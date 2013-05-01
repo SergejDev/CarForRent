@@ -1,10 +1,8 @@
 ﻿@model CarForRent.Models.Auto
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Auto details";
 }
-
-
 
 <div class="container">
     <h2>Auto details</h2>
@@ -71,14 +69,6 @@
         </li>
         <li>
             <div class="displayLabel">
-                Count:
-            </div>
-            <div class="displayField">
-                @Html.DisplayTextFor(model => model.AutoCount)
-            </div>
-        </li>
-        <li>
-            <div class="displayLabel">
                 Engine type:
             </div>
             <div class="displayField">
@@ -93,6 +83,17 @@
                 @Html.DisplayTextFor(model => model.AutoClass.ClassTitle)
             </div>
         </li>
+        @if (User.IsInRole("Administrator") && Html.ViewContext.Controller.ControllerContext.RouteData.GetRequiredString("controller") == "CmsAuto")
+        {
+            <li class="AutoInformation">
+                <div class="DivHeaders">
+                    Count: 
+                </div>
+                <div>
+                    @Html.DisplayFor(model => model.AutoCount)
+                </div>
+            </li>
+        }
         <li>
             <div class="displayLabel">
                 Fuel type:
@@ -114,4 +115,5 @@
 </div>
 <p>
     @Html.ActionLink("Back to Home", "Index")
+    @Html.ActionLink("Order", "Create", "Order", new { id = Model.AutoId }, new { @class = "btn" })
 </p>

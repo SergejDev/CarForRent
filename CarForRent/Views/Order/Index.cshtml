@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<CarForRent.Models.Order>
 
 @{
-    ViewBag.Title = "Orders";
+    ViewBag.Title = "Orders management";
 }
 
-<h2>Your oreders</h2>
+<h2>Orders management</h2>
 
 <table class="table">
     <tr>
@@ -18,7 +18,7 @@
             @Html.DisplayNameFor(model => model.Auto.Mark)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Auto.Model)
+            @Html.DisplayNameFor(model => model.Client.UserName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.IsOpen)
@@ -26,33 +26,35 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrderDuration)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrderDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Auto.Mark)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Auto.Model)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsOpen)
-        </td>
-        <td>
-            @Html.ActionLink("Details", "Details", new { id=item.OrderId }) |
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderDuration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Auto.Mark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Client.UserName)
+            </td>
+            <td>
+                @if (item.IsOpen)
+                {
+                    <div>Yes</div>
+                }
+                else
+                {
+                    <div>No</div>
+                }
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.OrderId })
+            </td>
+        </tr>
+    }
 
 </table>
-
-@section Scripts
-{
-
-
-}

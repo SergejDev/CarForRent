@@ -55,6 +55,17 @@
                                     <div class="DivHeaders">Class auto: </div>
                                     <div>@Html.DisplayFor(modelItme => item.AutoClass.ClassTitle)</div>
                                 </li>
+                                @if (User.IsInRole("Administrator") && Html.ViewContext.Controller.ControllerContext.RouteData.GetRequiredString("controller") == "CmsAuto")
+                                {
+                                    <li class="AutoInformation">
+                                        <div class="DivHeaders">
+                                            Count: 
+                                        </div>
+                                        <div>
+                                            @Html.DisplayFor(modelItme => item.AutoCount)
+                                        </div>
+                                    </li>
+                                }
                                 <li class="AutoInformation">
                                     <div class="DivHeaders">Price: </div>
                                     <div>@Html.DisplayFor(modelItem => item.Price)</div>

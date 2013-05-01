@@ -106,12 +106,6 @@ namespace CarForRent.Controllers.Cms
                 return RedirectToAction("Index");
             }
 
-            //if (ModelState.IsValid)
-            //{
-            //    db.Entry(auto).State = EntityState.Modified;
-            //    db.SaveChanges();
-            //    return RedirectToAction("Index");
-            //}
             ComboBoxPopulator.PopulateAutoComboBoxes(ViewBag);
             return View("../Auto/Edit", auto);
         }
