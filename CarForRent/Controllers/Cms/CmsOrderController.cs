@@ -22,7 +22,7 @@ namespace CarForRent.Controllers.Cms
         public ActionResult Index()
         {
             var orders = db.Orders.Include(o => o.Auto).Include(o => o.Client);
-            return View(orders.ToList());
+            return View("../Order/Index", orders.ToList());
         }
 
         //
@@ -35,7 +35,7 @@ namespace CarForRent.Controllers.Cms
             {
                 return HttpNotFound();
             }
-            return View(order);
+            return View("../Order/Details", order);
         }
 
         protected override void Dispose(bool disposing)

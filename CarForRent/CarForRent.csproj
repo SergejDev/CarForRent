@@ -411,12 +411,10 @@
     <Content Include="Views\Order\Index.cshtml" />
     <Content Include="Views\Order\Details.cshtml" />
     <Content Include="Views\Order\Create.cshtml" />
-    <Content Include="Views\CmsOrder\Index.cshtml" />
-    <Content Include="Views\CmsOrder\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\AutosImages\" />
+    <Folder Include="Content\uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

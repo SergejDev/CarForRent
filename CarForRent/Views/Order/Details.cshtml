@@ -7,7 +7,6 @@
 <h2>Order details</h2>
 
 <fieldset>
-    <legend>Order</legend>
 
     <div class="display-label">
          @Html.DisplayNameFor(model => model.OrderDuration)
@@ -27,9 +26,30 @@
          @Html.DisplayNameFor(model => model.IsOpen)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.IsOpen)
+        @if (Model.IsOpen)
+        {
+            <div>Yes</div>
+        }
+        else
+        {
+            <div>No</div>
+        }
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Auto.Mark)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Auto.Mark)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Client.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Client.UserName)
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index", null, new { @class="btn"})
 </p>
