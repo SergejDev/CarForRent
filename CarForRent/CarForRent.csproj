@@ -258,11 +258,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AutoImages\1.jpg" />
-    <Content Include="AutoImages\2.gif" />
-    <Content Include="AutoImages\auto1.jpg" />
-    <Content Include="AutoImages\auto2.jpg" />
-    <Content Include="AutoImages\tumblr_m914vuSNOb1ro8b0u.jpg" />
+    <Content Include="Images\HeadImages\auto1.jpg" />
+    <Content Include="Images\HeadImages\auto3.jpg" />
+    <Content Include="Images\HeadImages\auto2.jpg" />
     <Content Include="Content\AutoStyle.css" />
     <Content Include="Content\body.css" />
     <Content Include="Content\bootstrap-mvc-validation.css" />
@@ -329,6 +327,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\AutoBitch.js" />
+    <Content Include="NavigationRoutes\bootstrap-carousel.js" />
+    <Content Include="Scripts\bootstrap-carousel.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\html5shiv.js" />
@@ -416,6 +416,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\AutosImages\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
