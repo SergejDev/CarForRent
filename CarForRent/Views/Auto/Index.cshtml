@@ -1,4 +1,5 @@
-﻿@model IEnumerable<CarForRent.Models.Auto>
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<CarForRent.Models.Auto>
 
 @{
     ViewBag.Title = "Auto management";
@@ -132,8 +133,8 @@
                     <div class="Car">
                         <div class="CarsImageDiv">
                             @{
-                object path = System.Configuration.ConfigurationManager.AppSettings["localAddress"] +
-                              "/AutoImages/" + @item.ImageFileName;
+                                object path = System.Configuration.ConfigurationManager.AppSettings["localAddress"] +
+                                              "/AutoImages/" + @item.ImageFileName;
                                 <img class = "CarsImage" src="@path"/> 
                             }
                         </div>
@@ -174,7 +175,23 @@
             }
 
         </ul>
+        
+        <div style="text-align: center;">
+
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), 
+                                 new PagedListRenderOptions { LinkToFirstPageFormat = "<<", 
+
+                                                              LinkToPreviousPageFormat = "Back",
+
+                                                              LinkToNextPageFormat = "Forward",
+
+                                                              LinkToLastPageFormat = ">>" })
+
+        </div>
+
+
     </div>
+
 </div>
 
 

@@ -6,21 +6,27 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CarForRent.Models;
+using PagedList;
 
 namespace CarForRent.Controllers
 {
     public class AutoController : Controller
     {
         private DataBaseContext db = new DataBaseContext();
-
+        const int PageSize = 5;
         //
         // GET: /Auto/
 
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
             var autos = db.Autos.Include(a => a.AutoClass).Include(a => a.EngineType).Include(a => a.GearboxType).Include(a => a.FuelType);
-            return View(autos.ToList());
+            int pageNumber = page ?? 1;
+            
+            var autosList = autos.ToList();
+
+            return View(autosList.ToPagedList(pageNumber,PageSize));
         }
+
 
         //
         // GET: /Auto/Details/5

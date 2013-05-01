@@ -1,4 +1,5 @@
-﻿@model IEnumerable<CarForRent.Models.Order>
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<CarForRent.Models.Order>
 
 @{
     ViewBag.Title = "Orders management";
@@ -9,19 +10,19 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.OrderDuration)
+            @Html.DisplayNameFor(model => model[0].OrderDuration)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.OrderDate)
+            @Html.DisplayNameFor(model => model[0].OrderDate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Auto.Mark)
+            @Html.DisplayNameFor(model => model[0].Auto.Mark)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Client.UserName)
+            @Html.DisplayNameFor(model => model[0].Client.UserName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.IsOpen)
+            @Html.DisplayNameFor(model => model[0].IsOpen)
         </th>
         <th></th>
     </tr>
@@ -50,3 +51,15 @@
 }
 
 </table>
+<div style="text-align: center;">
+
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), 
+                                 new PagedListRenderOptions { LinkToFirstPageFormat = "<<", 
+
+                                                              LinkToPreviousPageFormat = "Back",
+
+                                                              LinkToNextPageFormat = "Forward",
+
+                                                              LinkToLastPageFormat = ">>" })
+
+        </div>

@@ -26,30 +26,32 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrderDuration)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrderDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Auto.Mark)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Auto.Model)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsOpen)
-        </td>
-        <td>
-            @Html.ActionLink("Details", "Details", new { id=item.OrderId }) |
-        </td>
-    </tr>
-}
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderDuration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Auto.Mark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Auto.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsOpen)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id=item.OrderId }) |
+            </td>
+        </tr>
+    }
 
 </table>
+
+
 
 @section Scripts
 {
