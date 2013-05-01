@@ -1,4 +1,4 @@
-﻿
+
 .CarRecord
 {
     list-style: none outside none;
@@ -18,7 +18,6 @@
 
 .AutoInformation {
     padding-left: 45px;
-    
 }
 
 .Car > div{
@@ -29,7 +28,6 @@
     margin-bottom: 20px;
     border: 3px solid;
     padding: 10px 10px 10px 10px;
-    width: 800px;
     border-radius: 10px;
     background-color: #272b30;
 }
@@ -41,7 +39,7 @@
     }
 
 .AutoList>h3, .SearchingPanel>h3 {
-    margin-left: 30px;
+    padding-left: 30px;
     color:#272b30;
 }
 
@@ -52,6 +50,12 @@
 
 .CarsList {
     list-style: none outside none;
+    width: 90%;
+    margin-left: 50px;
+}
+
+.AutoList>h3 {
+    text-align: center;
 }
 
 .DivHeaders {
@@ -71,7 +75,6 @@
 }
 
 .SearchingPanel {
-    height: 600px;
     border: 1px solid;
     border-radius: 30px;
     background-color: #E0E0E0 ;
@@ -86,6 +89,7 @@
     border-radius: 30px;
     height: auto;
     background-color: #E0E0E0 ;
+    vertical-align: top;
 }
 
 .AutoList:hover {
@@ -132,7 +136,9 @@ body {
 #overview {
     background-color: #E0E0E0;
     border-radius: 10px;
-
+    position: absolute;
+    left: 20px;
+    top: 20px;
 }
 
 #overview> .container > h1, #overview>.container> p {
@@ -140,12 +146,6 @@ body {
     
 }
 
-#headImage {
-    background-image: url("/Images/AutoImages/auto1.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 400px;
-}
 
 ul, ol{
     list-style: none outside none;
@@ -159,7 +159,43 @@ ul, ol{
     padding-bottom: 150px;
 }
 
+.item>img {
+    margin: auto;
+}
+
+.SearchingTable>tbody>tr>td>input {
+    width: 140px;
+    margin-right: 10px;
+
+}
+
 .linkButton {
     margin: 5px;
     display: block;
+}
+
+.SearchingTable {
+    
+}
+
+.searchLabel {
+    padding-left: 10px;
+    vertical-align: top;
+    color:#272b30;
+    font-weight: bold;
+}
+
+#Select {
+    margin-left: 2px;
+    width: 57px;
+}
+
+.SearchingTable>tbody>tr>td {
+    padding-bottom:10px;
+}
+
+.buttonSearch {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 90px;
 }
