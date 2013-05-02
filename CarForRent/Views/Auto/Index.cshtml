@@ -5,43 +5,46 @@
     ViewBag.Title = "Auto management";
 }
 
-<div id="myCarousel" class="carousel slide">
-    <ol class="carousel-indicators">
-        <li class="active" data-slide-to="0" data-target="#myCarousel"></li>
-        <li class="" data-slide-to="1" data-target="#myCarousel"></li>
-        <li class="" data-slide-to="2" data-target="#myCarousel"></li>
-    </ol>
-    <div class="carousel-inner">
-        <div class="item active">
-            <img alt="" src="/Images/HeadImages/auto1.jpg">
-            <div class="carousel-caption">
-                <h3>This is an online car rental system.          
+@if (Html.ViewContext.Controller.ControllerContext.RouteData.GetRequiredString("controller") != "CmsAuto")
+{
+    <div id="myCarousel" class="carousel slide">
+        <ol class="carousel-indicators">
+            <li class="active" data-slide-to="0" data-target="#myCarousel"></li>
+            <li class="" data-slide-to="1" data-target="#myCarousel"></li>
+            <li class="" data-slide-to="2" data-target="#myCarousel"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="item active">
+                <img alt="" src="/Images/HeadImages/auto1.jpg">
+                <div class="carousel-caption">
+                    <h3>This is an online car rental system.          
                     On our website you can order a car for every taste at an affordable price.
-                </h3>
+                    </h3>
+                </div>
             </div>
-        </div>
-        <div class="item">
-            <img alt="" src="/Images/HeadImages/auto3.jpg">
-            <div class="carousel-caption">
-                <h3>This is an online car rental system.          
+            <div class="item">
+                <img alt="" src="/Images/HeadImages/auto3.jpg">
+                <div class="carousel-caption">
+                    <h3>This is an online car rental system.          
                     On our website you can order a car for every taste at an affordable price.
-                </h3>
+                    </h3>
 
+                </div>
             </div>
-        </div>
-        <div class="item">
-            <img alt="" src="/Images/HeadImages/auto2.jpg">
-            <div class="carousel-caption">
-                <h3>This is an online car rental system.          
+            <div class="item">
+                <img alt="" src="/Images/HeadImages/auto2.jpg">
+                <div class="carousel-caption">
+                    <h3>This is an online car rental system.          
                     On our website you can order a car for every taste at an affordable price.
-                </h3>
+                    </h3>
 
+                </div>
             </div>
         </div>
+        <a class="left carousel-control" data-slide="prev" href="#myCarousel">‹</a>
+        <a class="right carousel-control" data-slide="next" href="#myCarousel">›</a>
     </div>
-    <a class="left carousel-control" data-slide="prev" href="#myCarousel">‹</a>
-    <a class="right carousel-control" data-slide="next" href="#myCarousel">›</a>
-</div>
+}
 
 <div class="container-fluid ">
     <div class="span3 SearchingPanel">
@@ -49,60 +52,52 @@
         <div>
             <table class="SearchingTable" style="width: 100%;">
                 <tr>
-                    <td class="searchLabel">
-                        Mark
+                    <td class="searchLabel">Mark
                     </td>
                     <td>
                         <input type="text" />
                     </td>
                 </tr>
                 <tr>
-                    <td class="searchLabel">
-                        Model
+                    <td class="searchLabel">Model
                     </td>
                     <td>
                         <input type="text" /></td>
                 </tr>
                 <tr>
-                    <td class="searchLabel">
-                        Year of manufacture
+                    <td class="searchLabel">Year of manufacture
                     </td>
                     <td>
                         <input type="text" /></td>
                 </tr>
                 <tr>
-                    <td class="searchLabel">
-                        Places count
+                    <td class="searchLabel">Places count
                     </td>
                     <td>
                         <input type="text" />
                     </td>
                 </tr>
-                
+
                 <tr>
-                    <td class="searchLabel">
-                        Engine volume
+                    <td class="searchLabel">Engine volume
                     </td>
                     <td>
                         <input type="text" /></td>
                 </tr>
                 <tr>
-                    <td class="searchLabel">
-                        Engine type
+                    <td class="searchLabel">Engine type
                     </td>
                     <td>
                         <input type="text" /></td>
                 </tr>
                 <tr>
-                    <td class="searchLabel">
-                        Auto class
+                    <td class="searchLabel">Auto class
                     </td>
                     <td>
                         <input type="text" /></td>
                 </tr>
                 <tr>
-                    <td class="searchLabel">
-                        Fuel type
+                    <td class="searchLabel">Fuel type
                     </td>
                     <td>
                         <input type="text" />
@@ -110,16 +105,15 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="searchLabel">
-                        Gearbox type
+                    <td class="searchLabel">Gearbox type
                     </td>
                     <td>
                         <input type="text" />
                     </td>
                 </tr>
-                
+
             </table>
-            
+
             <input class="btn-large btn-primary buttonSearch" type="button" value="Search" />
         </div>
     </div>
@@ -192,17 +186,17 @@
             }
 
         </ul>
-        
+
         <div style="text-align: center;">
 
-            @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), 
-                                 new PagedListRenderOptions { LinkToFirstPageFormat = "<<", 
-
-                                                              LinkToPreviousPageFormat = "Back",
-
-                                                              LinkToNextPageFormat = "Forward",
-
-                                                              LinkToLastPageFormat = ">>" })
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page }),
+                                 new PagedListRenderOptions
+                                 {
+                                     LinkToFirstPageFormat = "<<",
+                                     LinkToPreviousPageFormat = "Back",
+                                     LinkToNextPageFormat = "Forward",
+                                     LinkToLastPageFormat = ">>"
+                                 })
 
         </div>
     </div>
