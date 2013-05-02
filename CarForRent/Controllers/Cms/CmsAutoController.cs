@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using CarForRent.Models;
 using CarForRent.Filters;
 using CarForRent.Helpers;
+using PagedList;
 using System.IO;
 
 namespace CarForRent.Controllers.Cms
@@ -17,14 +18,15 @@ namespace CarForRent.Controllers.Cms
     public class CmsAutoController : Controller
     {
         private DataBaseContext db = new DataBaseContext();
-
+        const int PageSize = 5;
         //
         // GET: /Auto/
 
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            ViewBag.Title = "Auto management";
-            return View("../Auto/Index", db.Autos.ToList());
+            int pageNumber = page ?? 1;
+
+            return View("../Auto/Index", db.Autos.ToList().ToPagedList(pageNumber,PageSize));
         }
 
         //
@@ -105,7 +107,6 @@ namespace CarForRent.Controllers.Cms
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             ComboBoxPopulator.PopulateAutoComboBoxes(ViewBag);
             return View("../Auto/Edit", auto);
         }
@@ -134,7 +135,6 @@ namespace CarForRent.Controllers.Cms
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
 
         protected override void Dispose(bool disposing)
         {

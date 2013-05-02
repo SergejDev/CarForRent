@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using CarForRent.Models;
 using System.Web.Security;
 using CarForRent.Filters;
+using PagedList;
 
 namespace CarForRent.Controllers.Cms
 {
@@ -16,13 +17,15 @@ namespace CarForRent.Controllers.Cms
     public class CmsUserProfileController : Controller
     {
         private DataBaseContext db = new DataBaseContext();
+        const int PageSize = 5;
 
         //
         // GET: /UserProfile/
 
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            return View(db.UserProfiles.ToList());
+            int pageNumber = page ?? 1;
+            return View(db.UserProfiles.ToList().ToPagedList(pageNumber, PageSize));
         }
 
         //

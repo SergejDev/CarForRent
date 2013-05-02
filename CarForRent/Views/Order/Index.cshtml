@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CarForRent.Models.Order>
+@model IEnumerable<CarForRent.Models.Order>
 
 @{
     ViewBag.Title = "Orders management";
@@ -8,6 +8,9 @@
 
 <table class="table">
     <tr>
+     	<th>
+            @Html.DisplayNameFor(model => model.Client.UserName)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.OrderDuration)
         </th>
@@ -18,7 +21,7 @@
             @Html.DisplayNameFor(model => model.Auto.Mark)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Client.UserName)
+            @Html.DisplayNameFor(model => model.Auto.Model)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.IsOpen)
@@ -29,6 +32,9 @@
     @foreach (var item in Model)
     {
         <tr>
+        	<td>
+                @Html.DisplayFor(modelItem => item.Client.UserName)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.OrderDuration)
             </td>
@@ -39,7 +45,7 @@
                 @Html.DisplayFor(modelItem => item.Auto.Mark)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Client.UserName)
+                @Html.DisplayFor(modelItem => item.Auto.Model)
             </td>
             <td>
                 @if (item.IsOpen)
@@ -58,3 +64,9 @@
     }
 
 </table>
+
+
+@section Scripts
+{
+
+}

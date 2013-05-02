@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using CarForRent.Models;
 using CarForRent.Filters;
+using PagedList;
 
 namespace CarForRent.Controllers.Cms
 {
@@ -15,14 +16,15 @@ namespace CarForRent.Controllers.Cms
     public class CmsOrderController : Controller
     {
         private DataBaseContext db = new DataBaseContext();
-
+        const int PageSize = 5;
         //
         // GET: /CmsOrder/
 
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
+            int pageNumber = page ?? 1;
             var orders = db.Orders.Include(o => o.Auto).Include(o => o.Client);
-            return View("../Order/Index", orders.ToList());
+            return View("../Order/Index",orders.ToList().ToPagedList(pageNumber, PageSize));
         }
 
         //

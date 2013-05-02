@@ -1,4 +1,5 @@
-@model IEnumerable<CarForRent.Models.Auto>
+@using PagedList.Mvc
+@model PagedList.IPagedList<CarForRent.Models.Auto>
 
 @{
     ViewBag.Title = "Auto management";
@@ -38,11 +39,11 @@
             </div>
         </div>
     </div>
-    <a class="left carousel-control" data-slide="prev" href="#myCarousel"><</a>
-    <a class="right carousel-control" data-slide="next" href="#myCarousel">></a>
+    <a class="left carousel-control" data-slide="prev" href="#myCarousel">‹</a>
+    <a class="right carousel-control" data-slide="next" href="#myCarousel">›</a>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid ">
     <div class="span3 SearchingPanel">
         <h3>Searching panel </h3>
         <div>
@@ -123,7 +124,7 @@
         </div>
     </div>
 
-    <div class="span11 AutoList">
+    <div class="span9 AutoList">
         <h3>Assortment of cars</h3>
         @if (User.IsInRole("Administrator") && Html.ViewContext.Controller.ControllerContext.RouteData.GetRequiredString("controller") == "CmsAuto")
         {
@@ -191,6 +192,19 @@
             }
 
         </ul>
+        
+        <div style="text-align: center;">
+
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), 
+                                 new PagedListRenderOptions { LinkToFirstPageFormat = "<<", 
+
+                                                              LinkToPreviousPageFormat = "Back",
+
+                                                              LinkToNextPageFormat = "Forward",
+
+                                                              LinkToLastPageFormat = ">>" })
+
+        </div>
     </div>
 </div>
 
