@@ -21,6 +21,7 @@
 
 .Car > div{
     display: inline-block;
+    vertical-align: middle;
 }
 
 .CarsList > li{
@@ -75,8 +76,10 @@
 
 .SearchingPanel {
     border: 1px solid;
-    border-radius: 30px;
+    border-radius: 20px;
     background-color: #E0E0E0 ;
+    width: 280px;
+    margin-left: 0;
 }
 
 .SearchingPanel:hover {
@@ -85,10 +88,12 @@
 
 .AutoList {
     border: 1px solid;
-    border-radius: 30px;
+    border-radius: 20px;
     height: auto;
     background-color: #E0E0E0 ;
     vertical-align: top;
+    margin-left: 25px;
+    width: 936px;
 }
 
 .AutoList:hover {
@@ -104,7 +109,7 @@
     margin-top: 30px;
     padding-left: 30px;
     width: 500px;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 
@@ -134,7 +139,7 @@ body {
 
 #overview {
     background-color: #E0E0E0;
-    border-radius: 10px;
+    border-radius: 5px;
     position: absolute;
     left: 20px;
     top: 20px;
@@ -197,4 +202,16 @@ ul, ol{
     margin-bottom: 20px;
     margin-top: 20px;
     margin-left: 90px;
+}
+
+.Centered {
+    margin: auto;
+    width: 1250px;
+}
+
+.NoneLeftOffset {
+    margin-left: 0;
+    padding-left: 0;
+    margin-right: 0;
+    padding-right: 0;
 }
