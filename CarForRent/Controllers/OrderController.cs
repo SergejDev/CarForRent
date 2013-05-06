@@ -45,17 +45,19 @@ namespace CarForRent.Controllers
 
         public ActionResult Create(int? autoId)
         {
+            autoId = autoId ?? 1;
             var currentUser = db.UserProfiles.SingleOrDefault(u => u.UserName == User.Identity.Name);
             if (CustomValidators.ValidatePersonalInformation(currentUser))
             {
-                autoId = autoId ?? 1;
+                
                 ViewBag.CurrentAuto = db.Autos.SingleOrDefault(a => a.AutoId == autoId);
                 return View();
             }
             else
             {
                 ViewBag.Message = "First fill your personal information";
-                return View();//////redirect to filling personal information!!!!!
+                //return View();//////redirect to filling personal information!!!!!
+                return RedirectToAction("AddPersonalInformation", "Account", new { id = autoId });
             }
         }
 

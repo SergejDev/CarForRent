@@ -1,9 +1,6 @@
 @using PagedList.Mvc
 @model PagedList.IPagedList<CarForRent.Models.Auto>
 
-@{
-    ViewBag.Title = "Auto management";
-}
 
 @if (Html.ViewContext.Controller.ControllerContext.RouteData.GetRequiredString("controller") != "CmsAuto")
 {
@@ -44,6 +41,10 @@
         <a class="left carousel-control" data-slide="prev" href="#myCarousel">‹</a>
         <a class="right carousel-control" data-slide="next" href="#myCarousel">›</a>
     </div>
+}
+else
+{
+    <h3>@ViewBag.Title</h3>
 }
 
 <div class="container-fluid ">
@@ -172,7 +173,7 @@
 
                                 <li class="AutoInformation" style="vertical-align: middle">
 
-                                    @Html.ActionLink("Order", "Create", "Order", new { id = item.AutoId }, new { @class = "btn linkButton" })
+                                    @Html.ActionLink("Order", "Create", "Order", new { autoId = item.AutoId }, new { @class = "btn linkButton" })
                                     @if (User.IsInRole("Administrator") && Html.ViewContext.Controller.ControllerContext.RouteData.GetRequiredString("controller") == "CmsAuto")
                                     {
                                         @Html.ActionLink("Edit", "Edit", "CmsAuto", new { id = item.AutoId }, new { @class = "btn linkButton" })
