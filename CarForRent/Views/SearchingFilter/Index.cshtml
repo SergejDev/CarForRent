@@ -1,0 +1,81 @@
+﻿@model CarForRent.Models.SearchingFilter
+
+@using (Html.BeginForm("Index","SearchingFilter"))
+ {
+     <div class="span3 SearchingPanel NoneLeftOffset">
+         <h3>Searching panel </h3>
+         <div>
+             <table class="SearchingTable" style="width: 100%;">
+                 <tr>
+                     <td class="searchLabel">Mark
+                     </td>
+                     <td>
+                         @Html.TextBoxFor(m => m.Mark)
+                     </td>
+                 </tr>
+                 <tr>
+                     <td class="searchLabel">Model
+                     </td>
+                     <td>
+                         @Html.TextBoxFor(m => m.Model)</td>
+                 </tr>
+                 <tr>
+                     <td class="searchLabel">Year of manufacture
+                     </td>
+                     <td>
+                         @Html.TextBoxFor(m => m.YearOfManufacture)</td>
+                 </tr>
+                 <tr>
+                     <td class="searchLabel">Places count
+                     </td>
+                     <td>
+                         @Html.TextBoxFor(m => m.PlacesCount)
+                     </td>
+                 </tr>
+
+                 <tr>
+                     <td class="searchLabel">Engine volume
+                     </td>
+                     <td>
+                         @Html.TextBoxFor(m => m.EngineVolume)</td>
+                 </tr>
+                 <tr>
+                     <td class="searchLabel">Engine type
+                     </td>
+                     <td>
+                         @Html.TextBoxFor(m => m.EngineType)</td>
+                 </tr>
+                 <tr>
+                     <td class="searchLabel">Auto class
+                     </td>
+                     <td id="idClass">
+                         @Html.TextBoxFor(m => m.AutoClass)</td>
+                 </tr>
+                 <tr>
+                     <td class="searchLabel">Fuel type
+                     </td>
+                     <td>
+                         @Html.TextBoxFor(m => m.FuelType)
+                     </td>
+                 </tr>
+                 <tr>
+                     <td class="searchLabel">Gearbox type
+                     </td>
+                     <td>
+                         @Html.TextBoxFor(m => m.GearboxType)
+                     </td>
+                 </tr>
+                 
+                 <tr>
+                     <td class="searchLabel">Price $
+                     </td>
+                     <td>
+                         @Html.TextBoxFor(m => m.Price)
+                     </td>
+                 </tr>
+             </table>
+
+             <input id="FilterButton" class="btn-large btn-primary buttonSearch" type="submit" value="Search" />
+         </div>
+     </div>
+ }

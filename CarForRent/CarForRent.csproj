@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -180,6 +180,7 @@
     <Compile Include="Controllers\Cms\CmsAutoController.cs" />
     <Compile Include="Controllers\Cms\CmsOrderController.cs" />
     <Compile Include="Controllers\Cms\CmsUserProfileController.cs" />
+    <Compile Include="Controllers\SearchingFilterController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -254,8 +255,10 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Auto.cs" />
     <Compile Include="Models\AutoClass.cs" />
+    <Compile Include="Models\AutoListController.cs" />
     <Compile Include="Models\DataBaseContext.cs" />
     <Compile Include="Models\EngineType.cs" />
+    <Compile Include="Models\SearchingFilter.cs" />
     <Compile Include="Models\FuelType.cs" />
     <Compile Include="Models\GearboxType.cs" />
     <Compile Include="Models\Order.cs" />
@@ -419,6 +422,10 @@
     <Content Include="Views\Order\Index.cshtml" />
     <Content Include="Views\Order\Details.cshtml" />
     <Content Include="Views\Order\Create.cshtml" />
+    <Content Include="Views\SearchingFilter\Index.cshtml">
+      <BrowseToURL>~/Filter/Index</BrowseToURL>
+    </Content>
+    <Content Include="Views\AutoList\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -12,7 +12,7 @@ namespace CarForRent.Controllers
 {
     public class AutoController : Controller
     {
-        private DataBaseContext db = new DataBaseContext();
+        private DataBaseContext dbContext = new DataBaseContext();
         const int PageSize = 5;
         //
         // GET: /Auto/
@@ -20,20 +20,21 @@ namespace CarForRent.Controllers
         public ActionResult Index(int? page)
         {
             ViewBag.Title = "Auto rental system";
-            var autos = db.Autos.Include(a => a.AutoClass).Include(a => a.EngineType).Include(a => a.GearboxType).Include(a => a.FuelType);
+            var autos = dbContext.Autos.Include(a => a.AutoClass).Include(a => a.EngineType).Include(a => a.GearboxType).Include(a => a.FuelType);
             int pageNumber = page ?? 1;
-            
-            var autosList = autos.ToList();
 
-            return View(autosList.ToPagedList(pageNumber,PageSize));
+            var autosList = autos.ToList().ToPagedList(pageNumber, PageSize);
+
+            return View(autosList);
         }
+
 
         //
         // GET: /Auto/Details/5
 
         public ActionResult Details(int id = 1)
         {
-            Auto auto = db.Autos.Find(id);
+            Auto auto = dbContext.Autos.Find(id);
             if (auto == null)
             {
                 return HttpNotFound();
@@ -41,11 +42,11 @@ namespace CarForRent.Controllers
             return View(auto);
         }
 
-        
+
 
         protected override void Dispose(bool disposing)
         {
-            db.Dispose();
+            dbContext.Dispose();
             base.Dispose(disposing);
         }
     }
