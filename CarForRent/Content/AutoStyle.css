@@ -96,6 +96,16 @@
     width: 936px;
 }
 
+.AutoList {
+border: 1px solid;
+border-radius: 20px;
+height: auto;
+background-color: #E0E0E0 ;
+vertical-align: top;
+margin-left: 25px;
+}
+
+
 .AutoList:hover {
     border-color: cornflowerblue;
 }
@@ -214,4 +224,17 @@ ul, ol{
     padding-left: 0;
     margin-right: 0;
     padding-right: 0;
+}
+
+.NoneLeftOffset > form {
+    margin: 0;
+}
+
+.container-body {
+    width: 1275px;
+    margin: auto;
+}
+
+#myCarousel {
+    height: 460px;
 }

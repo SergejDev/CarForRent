@@ -1,0 +1,53 @@
+﻿@model CarForRent.Models.UserProfile
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Your personal information</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayTextFor(model => model.UserName)
+        </th>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserFirstName)
+        </th>
+        <th>
+            @Html.DisplayTextFor(model => model.UserFirstName)
+        </th>
+    </tr>
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserLastName)
+        </th>
+        <th>
+            @Html.DisplayTextFor(model => model.UserLastName)
+        </th>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserMidleName)
+        </th>
+        <th>
+            @Html.DisplayTextFor(model => model.UserMidleName)
+        </th>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PassportNumber)
+        </th>
+        <th>
+            @Html.DisplayTextFor(model => model.PassportNumber)
+        </th>
+    </tr>
+</table>
+
+@Html.ActionLink("Edit", "Edit", "ManageAccount", new { @class = "btn-primary btn" })

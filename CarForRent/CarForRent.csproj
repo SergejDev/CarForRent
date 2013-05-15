@@ -180,6 +180,7 @@
     <Compile Include="Controllers\Cms\CmsAutoController.cs" />
     <Compile Include="Controllers\Cms\CmsOrderController.cs" />
     <Compile Include="Controllers\Cms\CmsUserProfileController.cs" />
+    <Compile Include="Controllers\ManageAccountController.cs" />
     <Compile Include="Controllers\SearchingFilterController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -340,7 +341,6 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\AutoBitch.js" />
-    <Content Include="NavigationRoutes\bootstrap-carousel.js" />
     <Content Include="Scripts\bootstrap-carousel.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -392,11 +392,10 @@
     <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
     <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\ManagePassword.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -426,6 +425,11 @@
       <BrowseToURL>~/Filter/Index</BrowseToURL>
     </Content>
     <Content Include="Views\AutoList\Index.cshtml" />
+    <Content Include="Views\ManageAccount\Index.cshtml" />
+    <Content Include="Views\ManageAccount\Details.cshtml" />
+    <Content Include="Views\ManageAccount\Create.cshtml" />
+    <Content Include="Views\ManageAccount\Edit.cshtml" />
+    <Content Include="Views\ManageAccount\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

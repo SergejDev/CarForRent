@@ -37,7 +37,9 @@ namespace CarForRent.Controllers
             {
                 return HttpNotFound();
             }
-            return View(order);
+            var model = db.Autos.FirstOrDefault(m => m.AutoId == order.AutoId);
+
+            return View("../Auto/Details", model);
         }
 
         //
@@ -46,16 +48,17 @@ namespace CarForRent.Controllers
         public ActionResult Create(int? autoId)
         {
             var currentUser = db.UserProfiles.SingleOrDefault(u => u.UserName == User.Identity.Name);
+            autoId = autoId ?? 1;
+            ViewBag.CurrentAuto = db.Autos.SingleOrDefault(a => a.AutoId == autoId);
+
             if (CustomValidators.ValidatePersonalInformation(currentUser))
             {
-                autoId = autoId ?? 1;
-                ViewBag.CurrentAuto = db.Autos.SingleOrDefault(a => a.AutoId == autoId);
                 return View();
             }
             else
             {
                 ViewBag.Message = "First fill your personal information";
-                return View();//////redirect to filling personal information!!!!!
+                return RedirectToAction("Edit", "ManageAccount");
             }
         }
 
