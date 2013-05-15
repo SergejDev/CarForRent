@@ -10,8 +10,7 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>User Profile</legend>
-
+        @Html.Hidden("id", (int)ViewBag.AutoId)
         @Html.HiddenFor(model => model.UserId)
         @Html.HiddenFor(model => model.UserName)
         <div class="editor-label">

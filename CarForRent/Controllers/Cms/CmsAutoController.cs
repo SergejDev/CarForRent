@@ -25,7 +25,7 @@ namespace CarForRent.Controllers.Cms
         public ActionResult Index(int? page)
         {
             int pageNumber = page ?? 1;
-
+            ViewBag.Title = "Auto management";
             return View("../Auto/Index", db.Autos.ToList().ToPagedList(pageNumber,PageSize));
         }
 

@@ -43,7 +43,6 @@ namespace CarForRent.Controllers.Cms
 
         //
         // GET: /UserProfile/Edit/5
-
         public ActionResult Edit(int id = 0)
         {
             UserProfile userprofile = db.UserProfiles.Find(id);

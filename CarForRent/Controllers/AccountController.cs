@@ -10,6 +10,7 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using CarForRent.Filters;
 using CarForRent.Models;
+using System.Data;
 
 namespace CarForRent.Controllers
 {
@@ -94,6 +95,34 @@ namespace CarForRent.Controllers
             return View(model);
         }
 
+        public ActionResult AddPersonalInformation(int? id)
+        {
+
+            DataBaseContext db = new DataBaseContext();
+            int currentUserId = db.UserProfiles.Where(o => o.UserName == User.Identity.Name).SingleOrDefault().UserId;
+            UserProfile userprofile = db.UserProfiles.Find(currentUserId);
+            if (userprofile == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.AutoId = id;
+            return View("../CmsUserProfile/Edit", userprofile);
+            //return RedirectToAction("Edit", "CmsUserProfile", currentUserId);
+        }
+
+        [HttpPost]
+        public ActionResult AddPersonalInformation(UserProfile userprofile, int? id)
+        {
+            DataBaseContext db = new DataBaseContext();
+            if (ModelState.IsValid)
+            {
+                db.Entry(userprofile).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Create", "Order", new { autoId = id });
+            }
+            return View(userprofile);
+        }
+
         //
         // POST: /Account/Disassociate
 
@@ -108,7 +137,7 @@ namespace CarForRent.Controllers
             if (ownerAccount == User.Identity.Name)
             {
                 // Use a transaction to prevent the user from deleting their last login credential
-                using (var scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions { IsolationLevel = IsolationLevel.Serializable }))
+                using (var scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions { IsolationLevel = System.Transactions.IsolationLevel.Serializable }))
                 {
                     bool hasLocalAccount = OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
                     if (hasLocalAccount || OAuthWebSecurity.GetAccountsFromUserName(User.Identity.Name).Count > 1)
