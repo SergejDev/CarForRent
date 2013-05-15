@@ -7,25 +7,28 @@
 
 <h2>User management</h2>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model[0].UserName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model[0].UserFirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model[0].UserMidleName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model[0].UserLastName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model[0].PassportNumber)
-        </th>
-        <th></th>
-    </tr>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model[0].UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].UserFirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].UserMidleName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].UserLastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].PassportNumber)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
 
     @foreach (var item in Model) {
         <tr>

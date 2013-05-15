@@ -37,7 +37,10 @@ namespace CarForRent.Controllers.Cms
             {
                 return HttpNotFound();
             }
-            return View("../Order/Details", order);
+
+            var model = db.Autos.FirstOrDefault(m => m.AutoId == order.AutoId);
+
+            return View("../Auto/Details", model);
         }
 
         protected override void Dispose(bool disposing)
