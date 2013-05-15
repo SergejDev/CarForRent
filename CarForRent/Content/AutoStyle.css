@@ -86,23 +86,15 @@
     border-color: cornflowerblue;
 }
 
+
+
 .AutoList {
     border: 1px solid;
     border-radius: 20px;
     height: auto;
-    background-color: #E0E0E0 ;
+    background-color: #E0E0E0;
     vertical-align: top;
     margin-left: 25px;
-    width: 936px;
-}
-
-.AutoList {
-border: 1px solid;
-border-radius: 20px;
-height: auto;
-background-color: #E0E0E0 ;
-vertical-align: top;
-margin-left: 25px;
 }
 
 
