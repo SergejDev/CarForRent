@@ -43,6 +43,28 @@ namespace CarForRent.Controllers.Cms
             return View("../Auto/Details", model);
         }
 
+        public ActionResult Edit(int id = 0)
+        {
+            Order order = db.Orders.Find(id);
+            if (order == null)
+            {
+                return HttpNotFound();
+            }
+            return View("../Order/Edit", order);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Order order)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(order).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View("../Order/Edit", order);
+        }
+
         protected override void Dispose(bool disposing)
         {
             db.Dispose();

@@ -1,4 +1,5 @@
 @using PagedList.Mvc
+@using CarForRent.Models
 @model PagedList.IPagedList<CarForRent.Models.Auto>
 
 
@@ -48,76 +49,9 @@ else
 }
 
 <div class="container-fluid ">
-    <div class="span3 SearchingPanel">
-        <h3>Searching panel </h3>
-        <div>
-            <table class="SearchingTable" style="width: 100%;">
-                <tr>
-                    <td class="searchLabel">Mark
-                    </td>
-                    <td>
-                        <input type="text" />
-                    </td>
-                </tr>
-                <tr>
-                    <td class="searchLabel">Model
-                    </td>
-                    <td>
-                        <input type="text" /></td>
-                </tr>
-                <tr>
-                    <td class="searchLabel">Year of manufacture
-                    </td>
-                    <td>
-                        <input type="text" /></td>
-                </tr>
-                <tr>
-                    <td class="searchLabel">Places count
-                    </td>
-                    <td>
-                        <input type="text" />
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="searchLabel">Engine volume
-                    </td>
-                    <td>
-                        <input type="text" /></td>
-                </tr>
-                <tr>
-                    <td class="searchLabel">Engine type
-                    </td>
-                    <td>
-                        <input type="text" /></td>
-                </tr>
-                <tr>
-                    <td class="searchLabel">Auto class
-                    </td>
-                    <td>
-                        <input type="text" /></td>
-                </tr>
-                <tr>
-                    <td class="searchLabel">Fuel type
-                    </td>
-                    <td>
-                        <input type="text" />
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="searchLabel">Gearbox type
-                    </td>
-                    <td>
-                        <input type="text" />
-                    </td>
-                </tr>
-
-            </table>
-
-            <input class="btn-large btn-primary buttonSearch" type="button" value="Search" />
-        </div>
-    </div>
+    @{
+        Html.RenderPartial("../SearchingFilter/Index", new SearchingFilter());
+    }
 
     <div class="span9 AutoList">
         <h3>Assortment of cars</h3>

@@ -1,0 +1,63 @@
+﻿@model CarForRent.Models.Order
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit order</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        @Html.HiddenFor(model => model.AutoId)
+
+        @Html.HiddenFor(model => model.ClientId)
+
+        @Html.HiddenFor(model => model.OrderId)
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.OrderDuration)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.OrderDuration)
+            @Html.HiddenFor(model => model.OrderDuration)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.OrderDate)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.OrderDate)
+            @Html.HiddenFor(model => model.OrderDate)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Auto.Mark)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Auto.Mark)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Client.UserName)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Client.UserName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsOpen)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsOpen)
+            @Html.ValidationMessageFor(model => model.IsOpen)
+        </div>
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+<p>
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn" })
+</p>
