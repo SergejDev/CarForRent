@@ -13,11 +13,11 @@
     <fieldset>
 
         @Html.HiddenFor(model => model.AutoId)
-        <div class="displayField">
+        <div class="displayField" style="margin-bottom: 30px;">
             <img class = "img-rounded" src="@CarForRent.Helpers.UrlBuilder.BuildAutoImageUrl(Model.ImageFileName)"/>
         </div>
 
-        <div class="editor-field">
+        <div class="editor-field" style="margin-bottom: 10px;">
             <input type="file" name="file" class="btn"/>
         </div>
 

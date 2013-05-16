@@ -113,7 +113,6 @@
 
     </ul>
 </div>
-<p>
-    @Html.ActionLink("Back to Home", "Index")
-    @Html.ActionLink("Order", "Create", "Order", new { id = Model.AutoId }, new { @class = "btn" })
-</p>
+<div style="margin-left: 34px">
+    @Html.ActionLink("Order", "Create", "Order", new { autoId = Model.AutoId }, new { @class = "btn btn-large btn-primary" })
+</div>
