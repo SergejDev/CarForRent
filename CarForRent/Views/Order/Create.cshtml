@@ -103,30 +103,32 @@
         </li>
     </ul>
 </div>
+<div style="margin-left: 34px;">
+    @using (Html.BeginForm()) {
+        @Html.ValidationSummary(true)
 
-@using (Html.BeginForm()) {
-    @Html.ValidationSummary(true)
+        <fieldset>
 
-    <fieldset>
+            @Html.Hidden("AutoId", (int)ViewBag.CurrentAuto.AutoId)
 
-        @Html.Hidden("AutoId", (int)ViewBag.CurrentAuto.AutoId)
+            <div class="editor-label">
+                @Html.LabelFor(model => model.OrderDuration)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.OrderDuration)
+                @Html.ValidationMessageFor(model => model.OrderDuration)
+            </div>
+            <p>
+                <input type="submit" value="Order"  class="btn"/>
+            </p>
+        </fieldset>
+    }
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.OrderDuration)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.OrderDuration)
-            @Html.ValidationMessageFor(model => model.OrderDuration)
-        </div>
-        <p>
-            <input type="submit" value="Order"  class="btn"/>
-        </p>
-    </fieldset>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index", "CmsAuto", null, new { @class="btn"})
+    <div>
+        @Html.ActionLink("Back to List", "Index", "CmsAuto", null, new { @class="btn"})
+    </div>
 </div>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
