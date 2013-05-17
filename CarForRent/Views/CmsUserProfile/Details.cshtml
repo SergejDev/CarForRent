@@ -6,43 +6,69 @@
 
 <h2>Details</h2>
 
-<fieldset>
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.UserName)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.UserName)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.UserFirstName)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.UserFirstName)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.UserMidleName)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.UserMidleName)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.UserLastName)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.UserLastName)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.PassportNumber)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.PassportNumber)
-    </div>
-</fieldset>
+<table class="table table-striped">
+    <tr>
+        <td>
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.UserName)
+            </div>
+        </td>
+        <td>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.UserName)
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.UserFirstName)
+            </div>
+        </td>
+        <td>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.UserFirstName)
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.UserMidleName)
+            </div>
+        </td>
+        <td>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.UserMidleName)
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.UserLastName)
+            </div>
+        </td>
+        <td>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.UserLastName)
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.PassportNumber)
+            </div>
+        </td>
+        <td>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.PassportNumber)
+            </div>
+        </td>
+    </tr>
+</table>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.UserId }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UserId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

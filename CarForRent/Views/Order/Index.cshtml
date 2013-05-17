@@ -61,7 +61,11 @@
                 }
             </td>
             <td>
-                @Html.ActionLink("Details", "Details", new { id = item.OrderId }) | @Html.ActionLink("Edit", "Edit", new { id = item.OrderId })
+                @Html.ActionLink("Details", "Details", new { id = item.OrderId })
+                @if (User.IsInRole("Administrator"))
+                {
+                    <div style="display: inline;"> | </div>@Html.ActionLink("Edit", "Edit", new { id = item.OrderId })
+                }
             </td>
         </tr>
     }
