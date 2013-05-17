@@ -6,7 +6,7 @@
 
 <h2> Редактирование персональных данных </h2>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm(new { returnUrl = ViewBag.ReturnUrl })) {
         @Html.ValidationSummary(true)
 
         <fieldset>
@@ -14,13 +14,7 @@
 
             @Html.HiddenFor(model => model.UserId)
 
-            <div class="editor-label">
-                @Html.LabelFor(model => model.UserName)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.UserName)
-                @Html.ValidationMessageFor(model => model.UserName)
-            </div>
+            @Html.HiddenFor(model => model.UserName)
 
             <div class="editor-label">
                 @Html.LabelFor(model => model.UserFirstName)

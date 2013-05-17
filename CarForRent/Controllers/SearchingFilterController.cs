@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using CarForRent.Models;
 using PagedList;
+using CarForRent.Helpers;
 
 namespace CarForRent.Controllers
 {
@@ -13,10 +14,11 @@ namespace CarForRent.Controllers
         DataBaseContext dbContext = new DataBaseContext();
         //
         // GET: /Filter/
-
+        [ActionName("GetIndex")]
         public ActionResult Index()
         {
-            return PartialView();
+            ComboBoxPopulator.PopulateSearchPanelComboBoxes(ViewBag);
+            return PartialView("Index");
         }
 
         [HttpPost]
@@ -52,7 +54,6 @@ namespace CarForRent.Controllers
             {
                 autos = autos.Where(m => m.Model.Contains(filter.Model));
             }
-
 
             if (filter.EngineVolume != null)
             {

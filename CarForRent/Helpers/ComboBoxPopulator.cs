@@ -16,5 +16,11 @@ namespace CarForRent.Helpers
             viewBag.FuelTypeItems = listBuilder.FuelTypeListItems();
         }
 
+        public static void PopulateSearchPanelComboBoxes(dynamic viewBag)
+        {
+            SelectedListBuilder listBuilder = new SelectedListBuilder();
+            viewBag.AutoItems = listBuilder.AutoListItems();
+        }
+
     }
 }

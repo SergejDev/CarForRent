@@ -12,12 +12,7 @@
                      <td class="searchLabel">Марка
                      </td>
                      <td>
-                         @{
-                             var item1 = new SelectListItem();
-                             item1.Text = item1.Value = "Audi";
-                             List<SelectListItem> items = new List<SelectListItem>(){item1};
-                             Html.DropDownListFor(filter => filter.Mark, new List<SelectListItem>(items));
-                         }
+                         @Html.DropDownListFor(m => m.Mark, (SelectList)ViewBag.AutoItems, new { id="markDropDown", @class="searchDropdown" })
                      </td>
                  </tr>
                  <tr>
@@ -86,3 +81,4 @@
          </div>
      </div>
 }
+

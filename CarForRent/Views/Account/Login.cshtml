@@ -34,7 +34,7 @@
             </fieldset>
         
             <h3>
-               Если у вас нет персонального аккаунта нажмите @Html.ActionLink("здесь", "Register")
+               Если у вас нет персонального аккаунта нажмите @Html.ActionLink("здесь", "Register", new { returnUrl = ViewBag.ReturnUrl })
             </h3>
 
         }

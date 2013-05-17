@@ -62,8 +62,9 @@ namespace CarForRent.Controllers
         // GET: /Account/Register
 
         [AllowAnonymous]
-        public ActionResult Register()
+        public ActionResult Register(String returnUrl)
         {
+            ViewBag.ReturnUrl = returnUrl;
             return View();
         }
 
@@ -73,17 +74,19 @@ namespace CarForRent.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(RegisterModel model)
+        public ActionResult Register(RegisterModel model, String returnUrl)
         {
             if (ModelState.IsValid)
             {
-                // Attempt to register the user
                 try
                 {
                     WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
                     Roles.AddUserToRole(model.UserName, "User");
                     WebSecurity.Login(model.UserName, model.Password);
-                    return RedirectToAction("Index", "Auto");
+                    //return RedirectToAction("Index", "Auto");
+                    return RedirectToAction("Edit", "ManageAccount", new { retUrl = returnUrl });
+                    
+                    //return Redirect(returnUrl);
                 }
                 catch (MembershipCreateUserException e)
                 {
@@ -91,7 +94,6 @@ namespace CarForRent.Controllers
                 }
             }
 
-            // If we got this far, something failed, redisplay form
             return View(model);
         }
 

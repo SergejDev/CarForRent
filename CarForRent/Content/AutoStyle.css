@@ -242,3 +242,7 @@ table > tbody> tr> td{
     vertical-align: central;
     padding-left: 13px;
 }
+
+.searchDropdown {
+    width: 94%;
+}

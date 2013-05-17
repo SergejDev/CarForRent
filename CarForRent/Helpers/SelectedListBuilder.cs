@@ -35,5 +35,11 @@ namespace CarForRent.Helpers
             SelectList fuelTypeItems = new SelectList(db.FuelTypes, "FuelTypeId", "FuelTypeTitle");
             return fuelTypeItems;
         }
+
+        public SelectList AutoListItems()
+        {
+            SelectList autoItems = new SelectList(db.Autos.Select(e => new { e.Mark }).Distinct(), "Mark", "Mark");
+            return autoItems;
+        }
     }
 }

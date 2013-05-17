@@ -67,7 +67,7 @@ namespace CarForRent.Controllers
         //
         // GET: /ManageAccount/Edit/5
 
-        public ActionResult Edit()
+        public ActionResult Edit(String retUrl)
         {
             int id = db.UserProfiles.Where(m => m.UserName == User.Identity.Name).FirstOrDefault().UserId;
             UserProfile userprofile = db.UserProfiles.Find(id);
@@ -75,6 +75,7 @@ namespace CarForRent.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.ReturnUrl = retUrl;
             return View(userprofile);
         }
 
@@ -82,17 +83,23 @@ namespace CarForRent.Controllers
         // POST: /ManageAccount/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(UserProfile userprofile)
+        public ActionResult Edit(UserProfile userprofile, String returnUrl)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(userprofile).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                if (String.IsNullOrEmpty(returnUrl))
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return Redirect(returnUrl);
+                }
             }
             return View(userprofile);
         }
-
 
 
 
