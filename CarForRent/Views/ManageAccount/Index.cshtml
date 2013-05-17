@@ -1,53 +1,57 @@
 ﻿@model CarForRent.Models.UserProfile
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Персональные данные";
 }
 
-<h2>Your personal information</h2>
+<h2>Ваши персональные данные</h2>
+<div class="row" style="margin-top: 30px">
+    <div class="span8 offset1">
+        <table class="table table-bordered">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserName)
+                </th>
+                <th>
+                    @Html.DisplayTextFor(model => model.UserName)
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserFirstName)
+                </th>
+                <th>
+                    @Html.DisplayTextFor(model => model.UserFirstName)
+                </th>
+            </tr>
 
-<table class="table table-striped">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.UserName)
-        </th>
-        <th>
-            @Html.DisplayTextFor(model => model.UserName)
-        </th>
-    </tr>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.UserFirstName)
-        </th>
-        <th>
-            @Html.DisplayTextFor(model => model.UserFirstName)
-        </th>
-    </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserLastName)
+                </th>
+                <th>
+                    @Html.DisplayTextFor(model => model.UserLastName)
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserMidleName)
+                </th>
+                <th>
+                    @Html.DisplayTextFor(model => model.UserMidleName)
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.PassportNumber)
+                </th>
+                <th>
+                    @Html.DisplayTextFor(model => model.PassportNumber)
+                </th>
+            </tr>
+        </table>
 
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.UserLastName)
-        </th>
-        <th>
-            @Html.DisplayTextFor(model => model.UserLastName)
-        </th>
-    </tr>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.UserMidleName)
-        </th>
-        <th>
-            @Html.DisplayTextFor(model => model.UserMidleName)
-        </th>
-    </tr>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.PassportNumber)
-        </th>
-        <th>
-            @Html.DisplayTextFor(model => model.PassportNumber)
-        </th>
-    </tr>
-</table>
+        @Html.ActionLink("Редактировать", "Edit", "ManageAccount", new { @class = "btn-primary btn" })
+    </div>
 
-@Html.ActionLink("Edit", "Edit", "ManageAccount", new { @class = "btn-primary btn" })
+</div>

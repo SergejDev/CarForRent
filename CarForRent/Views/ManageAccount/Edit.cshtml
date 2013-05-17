@@ -1,70 +1,71 @@
 ﻿@model CarForRent.Models.UserProfile
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Редактирование личной информации";
 }
 
-<h2> Edit your personal information </h2>
+<h2> Редактирование персональных данных </h2>
 
-@using (Html.BeginForm()) {
-    @Html.ValidationSummary(true)
+    @using (Html.BeginForm()) {
+        @Html.ValidationSummary(true)
 
-    <fieldset>
-        <legend></legend>
+        <fieldset>
+            <legend></legend>
 
-        @Html.HiddenFor(model => model.UserId)
+            @Html.HiddenFor(model => model.UserId)
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.UserName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.UserName)
-            @Html.ValidationMessageFor(model => model.UserName)
-        </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.UserName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.UserName)
+                @Html.ValidationMessageFor(model => model.UserName)
+            </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.UserFirstName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.UserFirstName)
-            @Html.ValidationMessageFor(model => model.UserFirstName)
-        </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.UserFirstName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.UserFirstName)
+                @Html.ValidationMessageFor(model => model.UserFirstName)
+            </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.UserLastName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.UserLastName)
-            @Html.ValidationMessageFor(model => model.UserLastName)
-        </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.UserLastName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.UserLastName)
+                @Html.ValidationMessageFor(model => model.UserLastName)
+            </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.UserMidleName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.UserMidleName)
-            @Html.ValidationMessageFor(model => model.UserMidleName)
-        </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.UserMidleName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.UserMidleName)
+                @Html.ValidationMessageFor(model => model.UserMidleName)
+            </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.PassportNumber)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.PassportNumber)
-            @Html.ValidationMessageFor(model => model.PassportNumber)
-        </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.PassportNumber)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.PassportNumber)
+                @Html.ValidationMessageFor(model => model.PassportNumber)
+            </div>
 
-        <p>
-            <input type="submit" value="Save" />
-        </p>
-    </fieldset>
-}
+            <div style="padding-top: 10px; margin-bottom: 30px">
+                <input type="submit" value="Сохранить изменения" class="btn btn-primary" />
+            </div>
 
+        </fieldset>
+    }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+    <div >
+        @Html.ActionLink("Вернуться к списку", "Index", "ManageAccount",new { @class = "btn" })
+    </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+

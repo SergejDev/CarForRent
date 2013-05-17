@@ -32,9 +32,9 @@ namespace CarForRent.Controllers
         //
         // GET: /Auto/Details/5
 
-        public ActionResult Details(int id = 1)
+        public ActionResult Details(int autoId = 1)
         {
-            Auto auto = dbContext.Autos.Find(id);
+            Auto auto = dbContext.Autos.Find(autoId);
             if (auto == null)
             {
                 return HttpNotFound();

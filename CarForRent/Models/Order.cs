@@ -12,23 +12,23 @@ namespace CarForRent.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int OrderId { get; set; }
 
-        [Display(Name = "Order duration")]
-        [Range(1, int.MaxValue, ErrorMessage = "Please enter a value bigger than {1}")]
+        [Display(Name = "Количество суток")]
+        [Range(1, int.MaxValue, ErrorMessage = "Минимальное количество суток - 1 сутки")]
         public int OrderDuration { get; set; }
 
         [DataType(DataType.DateTime)]
-        [Display(Name = "Order date")]
+        [Display(Name = "Дата заказа")]
         public DateTime OrderDate { get; set; }
 
         [Required]
-        [Display(Name = "Current")]
+        [Display(Name = "Текущее состояние")]
         public bool IsOpen { get; set; }
 
 
         public int AutoId { get; set; }
 
         [ForeignKey("AutoId")]
-        [Display(Name = "Auto")]
+        [Display(Name = "Автомобиль")]
         public virtual Auto Auto { get; set; }
 
 

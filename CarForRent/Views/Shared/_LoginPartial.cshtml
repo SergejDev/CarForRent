@@ -3,24 +3,24 @@
     if (User.IsInRole("Administrator"))
     {
     <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">CMS<b class="caret"></b></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">АДМИНИСТРИРОВАНИЕ<b class="caret"></b></a>
         <ul class="dropdown-menu">
-            <li>@Html.ActionLink("Auto Management", "Index", "CmsAuto")</li>
-            <li>@Html.ActionLink("User Profiles Management", "Index", "CmsUserProfile")</li>
-            <li>@Html.ActionLink("Orders Management", "Index", "CmsOrder")</li>
+            <li>@Html.ActionLink("Управление автомобилями", "Index", "CmsAuto")</li>
+            <li>@Html.ActionLink("Управление пользователями", "Index", "CmsUserProfile")</li>
+            <li>@Html.ActionLink("Управление заказами", "Index", "CmsOrder")</li>
         </ul>
     </li>
     }
     <li style="padding-left: 15px;" class="dropdown">
 
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            Hello, @User.Identity.Name! 
+            ЛИЧНЫЙ КАБИНЕТ 
              <b class="caret"></b>
         </a>
         <ul class="dropdown-menu">
-            <li>@Html.ActionLink("Personal information", "Index", "ManageAccount")</li>
-            <li>@Html.ActionLink("Change password", "ManagePassword", "Account")</li>
-            <li>@Html.ActionLink("Orders", "Index", "Order")</li>
+            <li>@Html.ActionLink("Персональная информация", "Index", "ManageAccount")</li>
+            <li>@Html.ActionLink("Изменить пароль", "ManagePassword", "Account")</li>
+            <li>@Html.ActionLink("Мои заказы", "Index", "Order")</li>
         </ul>
 
     </li>
@@ -29,13 +29,13 @@
         {
             @Html.AntiForgeryToken()
             <p class="navbar-text pull-right">
-                <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                <a href="javascript:document.getElementById('logoutForm').submit()">ВЫЙТИ</a>
             </p>
         }
     </li>
 }
 else
 {
-    <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-    <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    <li>@Html.ActionLink("РЕГИСТРАЦИЯ", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+    <li>@Html.ActionLink("ВОЙТИ В СИСТЕМУ", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
 }
