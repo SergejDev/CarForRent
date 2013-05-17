@@ -13,6 +13,7 @@ namespace CarForRent.Models
         public int EngineTypeId { set; get; }
 
         [Required]
+        [Display(Name = "Тип двигателя")]
         public String EngineTypeTitle { set; get; }
 
     }

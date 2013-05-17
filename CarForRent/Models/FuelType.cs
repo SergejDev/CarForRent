@@ -13,6 +13,7 @@ namespace CarForRent.Models
         public int FuelTypeId { set; get; }
 
         [Required]
+        [Display(Name = "Тип топлива")]
         public String FuelTypeTitle { set; get; }
 
     }

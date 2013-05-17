@@ -3,30 +3,37 @@
 @using (Html.BeginForm("Index", "SearchingFilter"))
 {
      <div class="span3 SearchingPanel NoneLeftOffset">
-         <h3>Searching panel</h3>
+         <h3>
+             Поиск автомобилей
+         </h3>
          <div>
              <table class="SearchingTable" style="width: 100%;">
                  <tr>
-                     <td class="searchLabel">Mark
+                     <td class="searchLabel">Марка
                      </td>
                      <td>
-                         @Html.TextBoxFor(m => m.Mark)
+                         @{
+                             var item1 = new SelectListItem();
+                             item1.Text = item1.Value = "Audi";
+                             List<SelectListItem> items = new List<SelectListItem>(){item1};
+                             Html.DropDownListFor(filter => filter.Mark, new List<SelectListItem>(items));
+                         }
                      </td>
                  </tr>
                  <tr>
-                     <td class="searchLabel">Model
+                     <td class="searchLabel">Модель
                      </td>
                      <td>
                          @Html.TextBoxFor(m => m.Model)</td>
                  </tr>
                  <tr>
-                     <td class="searchLabel">Year of manufacture
+                     <td class="searchLabel">Год выпуска
                      </td>
                      <td>
                          @Html.TextBoxFor(m => m.YearOfManufacture)</td>
                  </tr>
                  <tr>
-                     <td class="searchLabel">Places count
+                     <td class="searchLabel">Количество мест
                      </td>
                      <td>
                          @Html.TextBoxFor(m => m.PlacesCount)
@@ -34,32 +41,32 @@
                  </tr>
 
                  <tr>
-                     <td class="searchLabel">Engine volume
+                     <td class="searchLabel">Объем двигателя
                      </td>
                      <td>
                          @Html.TextBoxFor(m => m.EngineVolume)</td>
                  </tr>
                  <tr>
-                     <td class="searchLabel">Engine type
+                     <td class="searchLabel">Тип двигателя
                      </td>
                      <td>
                          @Html.TextBoxFor(m => m.EngineType)</td>
                  </tr>
                  <tr>
-                     <td class="searchLabel">Auto class
+                     <td class="searchLabel">Класс авто
                      </td>
                      <td id="idClass">
                          @Html.TextBoxFor(m => m.AutoClass)</td>
                  </tr>
                  <tr>
-                     <td class="searchLabel">Fuel type
+                     <td class="searchLabel">Тип топлива
                      </td>
                      <td>
                          @Html.TextBoxFor(m => m.FuelType)
                      </td>
                  </tr>
                  <tr>
-                     <td class="searchLabel">Gearbox type
+                     <td class="searchLabel">Коробка передач
                      </td>
                      <td>
                          @Html.TextBoxFor(m => m.GearboxType)
@@ -67,7 +74,7 @@
                  </tr>
                  
                  <tr>
-                     <td class="searchLabel">Price $
+                     <td class="searchLabel">Цена дол.$/сутки
                      </td>
                      <td>
                          @Html.TextBoxFor(m => m.Price)
@@ -75,7 +82,7 @@
                  </tr>
              </table>
 
-             <input type="submit" id="FilterButton" class="btn-large btn-primary buttonSearch"  value="Search" />
+             <input type="submit" id="FilterButton" class="btn-large btn-primary buttonSearch"  value="Поиск" />
          </div>
      </div>
 }

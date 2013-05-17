@@ -13,6 +13,7 @@ namespace CarForRent.Models
         public int AutoClassId { set; get; }
 
         [Required]
+        [Display(Name = "Класс")]
         public String ClassTitle { set; get; }
 
     }

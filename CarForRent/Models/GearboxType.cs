@@ -13,6 +13,7 @@ namespace CarForRent.Models
         public int GearboxTypeId { set; get; }
 
         [Required]
+        [Display(Name = "Тип коробки передач")]
         public String GearboxTypeTitle { set; get; }
 
     }

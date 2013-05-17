@@ -1,10 +1,10 @@
 @model IEnumerable<CarForRent.Models.Order>
 
 @{
-    ViewBag.Title = "Orders management";
+    ViewBag.Title = "Управление заказами";
 }
 
-<h2>Orders management</h2>
+<h2>Управление заказами</h2>
 
 <table class="table table-bordered">
     <thead>
@@ -53,15 +53,15 @@
             <td>
                 @if (item.IsOpen)
                 {
-                    <div>Yes</div>
+                    <div>Да</div>
                 }
                 else
                 {
-                    <div>No</div>
+                    <div>Нет</div>
                 }
             </td>
             <td>
-                @Html.ActionLink("Details", "Details", new { id = item.OrderId }) | @Html.ActionLink("Edit", "Edit", new { id = item.OrderId })
+                @Html.ActionLink("Подробно", "Details", new { id = item.OrderId }) | @Html.ActionLink("Редактировать", "Edit", new { id = item.OrderId })
             </td>
         </tr>
     }

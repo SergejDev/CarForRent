@@ -7,7 +7,7 @@ namespace CarForRent.Models
 {
     public class SearchingFilter
     {
-        public String Mark { get; set; }
+        public String Mark;
 
         public String Model { get; set; }
 

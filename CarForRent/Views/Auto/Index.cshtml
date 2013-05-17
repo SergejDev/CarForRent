@@ -6,117 +6,131 @@
 @if (Html.ViewContext.Controller.ControllerContext.RouteData.GetRequiredString("controller") != "CmsAuto")
 {
     <div id="myCarousel" class="carousel slide">
-        <ol class="carousel-indicators">
-            <li class="active" data-slide-to="0" data-target="#myCarousel"></li>
-            <li class="" data-slide-to="1" data-target="#myCarousel"></li>
-            <li class="" data-slide-to="2" data-target="#myCarousel"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="item active">
-                <img alt="" src="/Images/HeadImages/auto1.jpg">
-                <div class="carousel-caption">
-                    <h3>This is an online car rental system.          
-                    On our website you can order a car for every taste at an affordable price.
-                    </h3>
+            <ol class="carousel-indicators">
+                <li class="active" data-slide-to="0" data-target="#myCarousel"></li>
+                <li class="" data-slide-to="1" data-target="#myCarousel"></li>
+                <li class="" data-slide-to="2" data-target="#myCarousel"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img alt="" src="/Images/HeadImages/auto1.jpg">
+                    <div class="carousel-caption">
+                        <h3>
+                            Прокат и аренда автомобилей в Белоруссии. 
+                        </h3>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <img alt="" src="/Images/HeadImages/auto3.jpg">
-                <div class="carousel-caption">
-                    <h3>This is an online car rental system.          
-                    On our website you can order a car for every taste at an affordable price.
-                    </h3>
+                <div class="item">
+                    <img alt="" src="/Images/HeadImages/auto3.jpg">
+                    <div class="carousel-caption">
+                        <h3>
+                            Прокат и аренда автомобилей в Белоруссии. 
+                        </h3>
 
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <img alt="" src="/Images/HeadImages/auto2.jpg">
-                <div class="carousel-caption">
-                    <h3>This is an online car rental system.          
-                    On our website you can order a car for every taste at an affordable price.
-                    </h3>
+                <div class="item">
+                    <img alt="" src="/Images/HeadImages/auto2.jpg">
+                    <div class="carousel-caption">
+                        <h3>
+                            Прокат и аренда автомобилей в Белоруссии. 
+                        </h3>
 
+                    </div>
                 </div>
             </div>
+            <a class="left carousel-control" data-slide="prev" href="#myCarousel">‹</a>
+            <a class="right carousel-control" data-slide="next" href="#myCarousel">›</a>
         </div>
-        <a class="left carousel-control" data-slide="prev" href="#myCarousel">‹</a>
-        <a class="right carousel-control" data-slide="next" href="#myCarousel">›</a>
-    </div>
 }
 else
 {
-    <h3>@ViewBag.Title</h3>
+    <h2>Страница администратора </h2>
 }
 
 <div class="container-fluid ">
     @{
-        Html.RenderPartial("../SearchingFilter/Index", new SearchingFilter());
+       Html.RenderPartial("../SearchingFilter/Index", new SearchingFilter());
     }
 
     <div class="span9 AutoList">
-        <h3>Assortment of cars</h3>
+        <h3>Наш ассортимент </h3>
         @if (User.IsInRole("Administrator") && Html.ViewContext.Controller.ControllerContext.RouteData.GetRequiredString("controller") == "CmsAuto")
         {
-            @Html.ActionLink("Add auto", "Create", "CmsAuto", null, new { @class = "btn" })
+            @Html.ActionLink("Добавить авто", "Create", "CmsAuto", null, new { @class = "btn" })
         }
         <ul class="CarsList">
             @foreach (var item in Model)
             {
                 <li>
-                    <div class="Car">
-                        <div class="CarsImageDiv">
-                            <img class="img-rounded" src="@CarForRent.Helpers.UrlBuilder.BuildAutoImageUrl(item.ImageFileName)"/>
-                        </div>
-                        <div class="CarRecordDiv">
-                            <ul class="CarRecord">
-                                <li>
-                                    <input type="hidden" class="CarId" value="@item.AutoId" />
-                                </li>
 
-                                <li class="AutoInformation">
-                                    <div class="DivHeaders">Mark: </div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="CarsImageDiv">
+                                        <img class="img-rounded" src="@CarForRent.Helpers.UrlBuilder.BuildAutoImageUrl(item.ImageFileName)"/>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <input type="hidden" class="CarId" value="@item.AutoId" />
+                                </td>
+
+                                <td>
+                                    <div class="DivHeaders">Марка: </div>
                                     <div>
                                         @Html.DisplayFor(modelItem => item.Mark)
                                     </div>
-                                </li>
-                                <li class="AutoInformation">
-                                    <div class="DivHeaders">Model: </div>
+                                </td>
+
+                                <td>
+                                    <div class="DivHeaders">Модель: </div>
                                     <div>
                                         @Html.DisplayFor(modelItem => item.Model)
                                     </div>
-                                </li>
-                                <li class="AutoInformation">
-                                    <div class="DivHeaders">Class auto: </div>
+                                </td>
+
+                                <td>
+                                    <div class="DivHeaders">Класс: </div>
                                     <div>@Html.DisplayFor(modelItme => item.AutoClass.ClassTitle)</div>
-                                </li>
+                                </td>
+
                                 @if (User.IsInRole("Administrator") && Html.ViewContext.Controller.ControllerContext.RouteData.GetRequiredString("controller") == "CmsAuto")
                                 {
-                                    <li class="AutoInformation">
+                                    <td class="AutoInformation">
                                         <div class="DivHeaders">
-                                            Count: 
+                                            Количество: 
                                         </div>
                                         <div>
                                             @Html.DisplayFor(modelItme => item.AutoCount)
                                         </div>
-                                    </li>
+                                    </td>
                                 }
-                                <li class="AutoInformation">
-                                    <div class="DivHeaders">Price: </div>
+
+                                <td>
+                                    <div class="DivHeaders">Цена($/сутки): </div>
                                     <div>@Html.DisplayFor(modelItem => item.Price)</div>
-                                </li>
+                                </td>
 
-                                <li class="AutoInformation" style="vertical-align: middle">
+                                <td class="AutoInformation" style="vertical-align: middle">
 
-                                    @Html.ActionLink("Order", "Create", "Order", new { autoId = item.AutoId }, new { @class = "btn linkButton" })
+                                    @Html.ActionLink("Заказать", "Create", "Order", new { autoId = item.AutoId }, new { @class = "btn linkButton" })
+                                    @if (!(User.IsInRole("Administrator") && Html.ViewContext.Controller.ControllerContext.RouteData.GetRequiredString("controller") == "CmsAuto"))
+                                    {
+                                        @Html.ActionLink("Подробно", "Details", "Auto", new { autoId = item.AutoId }, new { @class = "btn linkButton" })
+                                    }
+
                                     @if (User.IsInRole("Administrator") && Html.ViewContext.Controller.ControllerContext.RouteData.GetRequiredString("controller") == "CmsAuto")
                                     {
-                                        @Html.ActionLink("Edit", "Edit", "CmsAuto", new { id = item.AutoId }, new { @class = "btn linkButton" })
-                                        @Html.ActionLink("Delete", "Delete", "CmsAuto", new { id = item.AutoId }, new { @class = "btn linkButton" })
+                                        @Html.ActionLink("Редактировать", "Edit", "CmsAuto", new { id = item.AutoId }, new { @class = "btn linkButton" })
+                                        @Html.ActionLink("Удалить", "Delete", "CmsAuto", new { id = item.AutoId }, new { @class = "btn linkButton" })
                                     }
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+
+                                </td>
+
+                            </tr>
+                            </table>
+
                 </li>
             }
 
@@ -128,8 +142,8 @@ else
                                  new PagedListRenderOptions
                                  {
                                      LinkToFirstPageFormat = "<<",
-                                     LinkToPreviousPageFormat = "Back",
-                                     LinkToNextPageFormat = "Forward",
+                                     LinkToPreviousPageFormat = "Назад",
+                                     LinkToNextPageFormat = "Вперед",
                                      LinkToLastPageFormat = ">>"
                                  })
 

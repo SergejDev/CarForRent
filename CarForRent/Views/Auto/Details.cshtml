@@ -5,114 +5,168 @@
 }
 
 <div class="container">
-    <h2>Auto details</h2>
+    <div style="width: 520px">
+        <h2>Информация об автомобиле</h2>
+        <table class="table table-bordered">
+            <tr>
+                <td colspan="2">
+                    <div>
+                        <img class = "img-rounded" src="@CarForRent.Helpers.UrlBuilder.BuildAutoImageUrl(Model.ImageFileName)"/>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        @Html.DisplayNameFor(model => model.Mark):
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        @Html.DisplayTextFor(model => model.Mark)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        @Html.DisplayNameFor(model => model.Model):
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        @Html.DisplayTextFor(model => model.Model)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        @Html.DisplayNameFor(model => model.Number):
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        @Html.DisplayTextFor(model => model.Number)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        @Html.DisplayNameFor(model => model.YearOfManufacture):
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        @Html.DisplayTextFor(model => model.YearOfManufacture)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        @Html.DisplayNameFor(model => model.PlacesCount):
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        @Html.DisplayTextFor(model => model.PlacesCount)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        @Html.DisplayNameFor(model => model.EngineVolume):
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        @Html.DisplayTextFor(model => model.EngineVolume)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        @Html.DisplayNameFor(model => model.Price):
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        @Html.DisplayTextFor(model => model.Price)
+                    </div>
+                </td>
 
-    <div class="displayField">
-        <img class = "img-rounded" src="@CarForRent.Helpers.UrlBuilder.BuildAutoImageUrl(Model.ImageFileName)"/>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        @Html.DisplayNameFor(model => model.EngineType.EngineTypeTitle):
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        @Html.DisplayTextFor(model => model.EngineType.EngineTypeTitle)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        @Html.DisplayNameFor(model => model.AutoClass.ClassTitle):
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        @Html.DisplayTextFor(model => model.AutoClass.ClassTitle)
+                    </div>
+                </td>
+            </tr>
+            @if (User.IsInRole("Administrator") && Html.ViewContext.Controller.ControllerContext.RouteData.GetRequiredString("controller") == "CmsAuto")
+            {
+                <tr>
+                    <td>
+                        <div>
+                            @Html.DisplayNameFor(model => model.AutoCount): 
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            @Html.DisplayFor(model => model.AutoCount)
+                        </div>
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td>
+                    <div>
+                        @Html.DisplayNameFor(model => model.FuelType.FuelTypeTitle):
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        @Html.DisplayTextFor(model => model.FuelType.FuelTypeTitle)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        @Html.DisplayNameFor(model => model.GearboxType.GearboxTypeTitle):
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        @Html.DisplayTextFor(model => model.GearboxType.GearboxTypeTitle)
+                    </div>
+                </td>
+            </tr>
+        </table>
     </div>
-    <ul class="ElementsBlock">
-        <li>
-            <div class="displayLabel">
-                Mark auto:
-            </div>
-            <div class="displayField">
-                @Html.DisplayTextFor(model => model.Mark)
-            </div>
-        </li>
-        <li>
-            <div class="displayLabel">
-                Model auto:
-            </div>
-            <div class="displayField">
-                @Html.DisplayTextFor(model => model.Model)
-            </div>
-        </li>
-        <li>
-            <div class="displayLabel">
-                Numbers auto:
-            </div>
-            <div class="displayField">
-                @Html.DisplayTextFor(model => model.Number)
-            </div>
-        </li>
-        <li>
-            <div class="displayLabel">
-                Year of manufacture:
-            </div>
-            <div class="displayField">
-                @Html.DisplayTextFor(model => model.YearOfManufacture)
-            </div>
-        </li>
-        <li>
-            <div class="displayLabel">
-                Places count:
-            </div>
-            <div class="displayField">
-                @Html.DisplayTextFor(model => model.PlacesCount)
-            </div>
-        </li>
-        <li>
-            <div class="displayLabel">
-                Engine volume:
-            </div>
-            <div class="displayField">
-                @Html.DisplayTextFor(model => model.EngineVolume)
-            </div>
-        </li>
-        <li>
-            <div class="displayLabel">
-                Price:
-            </div>
-            <div class="displayField">
-                @Html.DisplayTextFor(model => model.Price)
-            </div>
-        </li>
-        <li>
-            <div class="displayLabel">
-                Engine type:
-            </div>
-            <div class="displayField">
-                @Html.DisplayTextFor(model => model.EngineType.EngineTypeTitle)
-            </div>
-        </li>
-        <li>
-            <div class="displayLabel">
-                Auto class:
-            </div>
-            <div class="displayField">
-                @Html.DisplayTextFor(model => model.AutoClass.ClassTitle)
-            </div>
-        </li>
-        @if (User.IsInRole("Administrator") && Html.ViewContext.Controller.ControllerContext.RouteData.GetRequiredString("controller") == "CmsAuto")
-        {
-            <li class="AutoInformation">
-                <div class="DivHeaders">
-                    Count: 
-                </div>
-                <div>
-                    @Html.DisplayFor(model => model.AutoCount)
-                </div>
-            </li>
-        }
-        <li>
-            <div class="displayLabel">
-                Fuel type:
-            </div>
-            <div class="displayField">
-                @Html.DisplayTextFor(model => model.FuelType.FuelTypeTitle)
-            </div>
-        </li>
-        <li>
-            <div class="displayLabel">
-                Gearbox type:
-            </div>
-            <div class="displayField">
-                @Html.DisplayTextFor(model => model.GearboxType.GearboxTypeTitle)
-            </div>
-        </li>
 
-    </ul>
 </div>
-<div style="margin-left: 34px">
-    @Html.ActionLink("Order", "Create", "Order", new { autoId = Model.AutoId }, new { @class = "btn btn-large btn-primary" })
-</div>
+    <div style="margin-left: 34px">
+        @Html.ActionLink("Заказать", "Create", "Order", new { autoId = Model.AutoId }, new { @class = "btn btn-large btn-primary" })
+    </div>

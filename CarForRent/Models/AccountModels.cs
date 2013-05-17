@@ -15,26 +15,26 @@ namespace CarForRent.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
 
-        [Display(Name = "Login")]
+        [Display(Name = "Логин")]
         public String UserName { get; set; }
 
-        [Display(Name = "First Name")]
+        [Display(Name = "Имя")]
         public String UserFirstName { get; set; }
 
-        [Display(Name = "Last Name")]
+        [Display(Name = "Фамилия")]
         public String UserLastName { get; set; }
 
-        [Display(Name = "Midle Name")]
+        [Display(Name = "Отчество")]
         public String UserMidleName { get; set; }
 
-        [Display(Name = "Passport Number")]
+        [Display(Name = "Номер пасспорта")]
         public String PassportNumber { get; set; }
     }
 
     public class RegisterExternalLoginModel
     {
         [Required]
-        [Display(Name = "Login")]
+        [Display(Name = "Логин")]
         public string UserName { get; set; }
 
         public string ExternalLoginData { get; set; }
@@ -44,51 +44,51 @@ namespace CarForRent.Models
     {
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Current password")]
+        [Display(Name = "Текущий пароль")]
         public string OldPassword { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "Пароль должен быть не менее 6 символов.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "New password")]
+        [Display(Name = "Новый пароль")]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm new password")]
-        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+        [Display(Name = "Повторите пароль")]
+        [Compare("NewPassword", ErrorMessage = "Введенные пароли не одинаковы.")]
         public string ConfirmPassword { get; set; }
     }
 
     public class LoginModel
     {
         [Required]
-        [Display(Name = "Login")]
+        [Display(Name = "Логин")]
         public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Пароль")]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "Запомнить?")]
         public bool RememberMe { get; set; }
     }
 
     public class RegisterModel
     {
         [Required]
-        [Display(Name = "Login")]
+        [Display(Name = "Логин")]
         public string UserName { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "Пароль должен быть не менее 6 символов.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Пароль")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "Повторите пароль")]
+        [Compare("Password", ErrorMessage = "Введенные пароли не одинаковы.")]
         public string ConfirmPassword { get; set; }
     }
 
