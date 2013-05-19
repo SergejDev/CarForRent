@@ -271,6 +271,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootswatch2.css" />
+    <Content Include="Content\NewStyle.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Images\HeadImages\auto1.jpg" />
     <Content Include="Images\HeadImages\auto3.jpg" />
@@ -340,6 +342,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\HeadImages\head.jpg" />
     <Content Include="Scripts\AutoBitch.js" />
     <Content Include="Scripts\bootstrap-carousel.js" />
     <Content Include="Scripts\bootstrap.js" />

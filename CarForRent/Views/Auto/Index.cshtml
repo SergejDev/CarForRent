@@ -5,40 +5,13 @@
 
 @if (Html.ViewContext.Controller.ControllerContext.RouteData.GetRequiredString("controller") != "CmsAuto")
 {
-    <div id="myCarousel" class="carousel slide">
-        <ol class="carousel-indicators">
-            <li class="active" data-slide-to="0" data-target="#myCarousel"></li>
-            <li class="" data-slide-to="1" data-target="#myCarousel"></li>
-            <li class="" data-slide-to="2" data-target="#myCarousel"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="item active">
-                <img alt="" src="/Images/HeadImages/auto1.jpg">
-                <div class="carousel-caption">
-                    <h3>Прокат и аренда автомобилей в Белоруссии. 
-                    </h3>
-                </div>
-            </div>
-            <div class="item">
-                <img alt="" src="/Images/HeadImages/auto3.jpg">
-                <div class="carousel-caption">
-                    <h3>Прокат и аренда автомобилей в Белоруссии. 
-                    </h3>
-
-                </div>
-            </div>
-            <div class="item">
-                <img alt="" src="/Images/HeadImages/auto2.jpg">
-                <div class="carousel-caption">
-                    <h3>Прокат и аренда автомобилей в Белоруссии. 
-                    </h3>
-
-                </div>
-            </div>
-        </div>
-        <a class="left carousel-control" data-slide="prev" href="#myCarousel">‹</a>
-        <a class="right carousel-control" data-slide="next" href="#myCarousel">›</a>
+    <div style="margin-bottom: 30px;">
+        <img src="~/Images/HeadImages/head.jpg">
     </div>
+    <div style="text-align: center;  margin-bottom: 30px">
+        <h1 style="color: #272b30;">Прокат и аренда автомобилей в Минске</h1>
+    </div>
+    
 }
 else
 {
@@ -52,7 +25,8 @@ else
     }
 
     <div class="span9 AutoList">
-        <h3>Наш ассортимент </h3>
+        <h3> Ассортимент  автомобилей
+        </h3>
         @if (User.IsInRole("Administrator") && Html.ViewContext.Controller.ControllerContext.RouteData.GetRequiredString("controller") == "CmsAuto")
         {
             @Html.ActionLink("Добавить авто", "Create", "CmsAuto", null, new { @class = "btn" })

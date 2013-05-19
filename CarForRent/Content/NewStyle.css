@@ -1,0 +1,248 @@
+﻿
+.CarRecord
+{
+    list-style: none outside none;
+}
+
+
+.CarsImageDiv
+{
+    width: 160px;
+    overflow: hidden;
+}
+
+.CarRecord> li {
+    display: inline-block;
+}
+
+.AutoInformation
+{
+    width: 105px;
+    overflow: hidden;
+}
+
+.Car > div{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.CarsList > li{
+    margin-bottom: 20px;
+    border: 3px solid;
+    padding: 10px 10px 10px 10px;
+    background-color: #FFFFFF;
+}
+
+    .CarsList > li:hover
+    {
+        border-color: cornflowerblue;
+        cursor: pointer;
+    }
+
+.AutoList>h3, .SearchingPanel>h3 {
+    padding-left: 19px;
+    color: #E0E0E0;
+}
+
+.AutoList > a {
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+.CarsList {
+    list-style: none outside none;
+    width: 90%;
+    margin-left: 50px;
+}
+
+.AutoList>h3 {
+    text-align: center;
+}
+
+.DivHeaders {
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.ElementsBlock > li > div{
+    display: inline-block;
+    
+}
+
+.ElementsBlock {
+    padding-bottom: 50px;
+    list-style: none outside none;
+    margin-left: 0px;
+}
+
+.SearchingPanel {
+    border: 1px solid;
+    background-color: #272b30;
+    width: 280px;
+    margin-left: 5px;
+}
+
+.SearchingPanel:hover {
+    border-color: cornflowerblue;
+}
+
+
+
+.AutoList {
+    border: 1px solid;
+    height: auto;
+    background-color: #272b30;
+    vertical-align: top;
+    margin-left: 25px;
+    min-width: 855px;
+}
+
+
+.AutoList:hover {
+    border-color: cornflowerblue;
+}
+
+.ElementsBlock > li{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    color: #E0E0E0;
+    background-color:#272b30;
+    margin-top: 20px;
+    padding-left: 30px;
+    width: 500px;
+}
+
+
+
+.displayLabel {
+    font-weight: bold;
+    width: 200px;
+}
+
+.PushButton {
+    padding: 5px 15px 5px 15px;
+    margin-bottom: 10px;
+}
+
+#overview>div {
+    
+}
+
+body {
+    background-color: #FFFFFF;
+    color: #272b30;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+}
+
+
+
+#overview {
+    background-color: #272b30;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+#overview> .container > h1, #overview>.container> p {
+    color:#E0E0E0;
+    
+}
+
+
+ul, ol{
+    list-style: none outside none;
+}
+
+.loginFieldset {
+    padding-bottom: 30px;
+}
+
+#loginForm {
+    padding-bottom: 150px;
+}
+
+.item>img {
+    margin: auto;
+}
+
+.SearchingTable>tbody>tr>td>input {
+    width: 127px;
+    margin-right: 10px;
+
+}
+
+.linkButton {
+    margin: 5px;
+    display: block;
+}
+
+.SearchingTable {
+    
+}
+
+.searchLabel {
+    padding-left: 10px;
+    vertical-align: top;
+    color:#E0E0E0;
+    font-weight: bold;
+}
+
+#Select {
+    margin-left: 2px;
+    width: 57px;
+}
+
+.SearchingTable>tbody>tr>td {
+    padding-bottom:10px;
+}
+
+.buttonSearch {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 90px;
+}
+
+.Centered {
+    margin: auto;
+    width: 1250px;
+}
+
+.NoneLeftOffset {
+    margin-left: 0;
+    padding-left: 0;
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.NoneLeftOffset > form {
+    margin: 0;
+}
+
+.container-body {
+    width: 1275px;
+    margin: auto;
+}
+
+#myCarousel {
+    height: 350px;
+}
+
+form {
+    margin-bottom: 0px;
+}
+
+table > tbody> tr> td{
+    vertical-align: central;
+    padding-left: 13px;
+}
+
+.searchDropdown {
+    width: 94%;
+}
+
+.myTable > tbody> tr > td {
+    text-align: center;
+    vertical-align: middle;
+}
