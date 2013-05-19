@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,10 +8,11 @@ namespace CarForRent.Models
 {
     public class SearchingFilter
     {
+
         public String Mark { get; set; }
 
         public String Model { get; set; }
-
+        
         public String YearOfManufacture { get; set; }
 
         public String PlacesCount { set; get; }

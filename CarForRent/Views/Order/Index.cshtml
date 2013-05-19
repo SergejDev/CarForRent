@@ -53,18 +53,18 @@
             <td>
                 @if (item.IsOpen)
                 {
-                    <div>Да</div>
+                    <div>Активен</div>
                 }
                 else
                 {
-                    <div>Нет</div>
+                    <div>Не активен</div>
                 }
             </td>
             <td>
                 @Html.ActionLink("Подробно", "Details", new { id = item.OrderId })
                 @if (User.IsInRole("Administrator"))
                 {
-                    <div style="display: inline;"> | </div>@Html.ActionLink("Редактировать", "Edit", new { id = item.OrderId })
+                    <div style="display: inline;"> | </div>@Html.ActionLink("Редактировать", "Edit", new { id = item.OrderId, controller = "CmsOrder" })
                 }
             </td>
         </tr>

@@ -5,11 +5,14 @@
 }
 
 <div class="container">
-    <div style="width: 520px">
-        <h2>Информация об автомобиле</h2>
-        <table class="table table-bordered">
+    <div>
+        <h2>Ниже представлены характеристики автомобиля</h2>
+        <table class="table table-bordered myTable" style="margin-top: 30px">
             <tr>
-                <td colspan="2">
+                <td>
+                    <h4>ФОТО</h4>
+                </td>
+                <td>
                     <div>
                         <a href="#" onclick="OpenNewWindow('@CarForRent.Helpers.UrlBuilder.BuildAutoImageUrl(Model.ImageFileName)', 700, 500); return true;">
                             <img class = "img-rounded" src="@CarForRent.Helpers.UrlBuilder.BuildAutoImageUrl(Model.ImageFileName)"/>
@@ -19,150 +22,150 @@
             </tr>
             <tr>
                 <td>
-                    <div>
+                    <h4>
                         @Html.DisplayNameFor(model => model.Mark):
-                    </div>
+                    </h4>
                 </td>
                 <td>
-                    <div>
+                    <h4>
                         @Html.DisplayTextFor(model => model.Mark)
-                    </div>
+                    </h4>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <div>
+                    <h4>
                         @Html.DisplayNameFor(model => model.Model):
-                    </div>
+                    </h4>
                 </td>
                 <td>
-                    <div>
+                    <h4>
                         @Html.DisplayTextFor(model => model.Model)
-                    </div>
+                    </h4>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <div>
+                    <h4>
                         @Html.DisplayNameFor(model => model.Number):
-                    </div>
+                    </h4>
                 </td>
                 <td>
-                    <div>
+                    <h4>
                         @Html.DisplayTextFor(model => model.Number)
-                    </div>
+                    </h4>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <div>
+                    <h4>
                         @Html.DisplayNameFor(model => model.YearOfManufacture):
-                    </div>
+                    </h4>
                 </td>
                 <td>
-                    <div>
+                    <h4>
                         @Html.DisplayTextFor(model => model.YearOfManufacture)
-                    </div>
+                    </h4>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <div>
+                    <h4>
                         @Html.DisplayNameFor(model => model.PlacesCount):
-                    </div>
+                    </h4>
                 </td>
                 <td>
-                    <div>
+                    <h4>
                         @Html.DisplayTextFor(model => model.PlacesCount)
-                    </div>
+                    </h4>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <div>
+                    <h4>
                         @Html.DisplayNameFor(model => model.EngineVolume):
-                    </div>
+                    </h4>
                 </td>
                 <td>
-                    <div>
+                    <h4>
                         @Html.DisplayTextFor(model => model.EngineVolume)
-                    </div>
+                    </h4>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <div>
+                    <h4>
                         @Html.DisplayNameFor(model => model.Price):
-                    </div>
+                    </h4>
                 </td>
                 <td>
-                    <div>
+                    <h4>
                         @Html.DisplayTextFor(model => model.Price)
-                    </div>
+                    </h4>
                 </td>
 
             </tr>
             <tr>
                 <td>
-                    <div>
+                    <h4>
                         @Html.DisplayNameFor(model => model.EngineType.EngineTypeTitle):
-                    </div>
+                    </h4>
                 </td>
                 <td>
-                    <div>
+                    <h4>
                         @Html.DisplayTextFor(model => model.EngineType.EngineTypeTitle)
-                    </div>
+                    </h4>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <div>
+                    <h4>
                         @Html.DisplayNameFor(model => model.AutoClass.ClassTitle):
-                    </div>
+                    </h4>
                 </td>
                 <td>
-                    <div>
+                    <h4>
                         @Html.DisplayTextFor(model => model.AutoClass.ClassTitle)
-                    </div>
+                    </h4>
                 </td>
             </tr>
             @if (User.IsInRole("Administrator") && Html.ViewContext.Controller.ControllerContext.RouteData.GetRequiredString("controller") == "CmsAuto")
             {
                 <tr>
                     <td>
-                        <div>
+                        <h4>
                             @Html.DisplayNameFor(model => model.AutoCount): 
-                        </div>
+                        </h4>
                     </td>
                     <td>
-                        <div>
+                        <h4>
                             @Html.DisplayFor(model => model.AutoCount)
-                        </div>
+                        </h4>
                     </td>
                 </tr>
             }
             <tr>
                 <td>
-                    <div>
+                    <h4>
                         @Html.DisplayNameFor(model => model.FuelType.FuelTypeTitle):
-                    </div>
+                    </h4>
                 </td>
                 <td>
-                    <div>
+                    <h4>
                         @Html.DisplayTextFor(model => model.FuelType.FuelTypeTitle)
-                    </div>
+                    </h4>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <div>
+                    <h4>
                         @Html.DisplayNameFor(model => model.GearboxType.GearboxTypeTitle):
-                    </div>
+                    </h4>
                 </td>
                 <td>
-                    <div>
+                    <h4>
                         @Html.DisplayTextFor(model => model.GearboxType.GearboxTypeTitle)
-                    </div>
+                    </h4>
                 </td>
             </tr>
         </table>
@@ -170,7 +173,7 @@
 
 </div>
     <div style="margin-left: 34px">
-        @Html.ActionLink("Заказать", "Create", "Order", new { autoId = Model.AutoId }, new { @class = "btn btn-large btn-primary" })
+        @Html.ActionLink("Заказать автомобиль", "Create", "Order", new { autoId = Model.AutoId }, new { @class = "btn btn-large btn-primary" })
     </div>
 
 @section Scripts

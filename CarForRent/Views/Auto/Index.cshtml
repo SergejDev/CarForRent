@@ -111,17 +111,18 @@ else
                             </td>
 
                             <td class="AutoInformation" style="vertical-align: middle">
-
-                                @Html.ActionLink("Заказать", "Create", "Order", new { autoId = item.AutoId }, new { @class = "btn linkButton" })
+                                
                                 @if (!(User.IsInRole("Administrator") && Html.ViewContext.Controller.ControllerContext.RouteData.GetRequiredString("controller") == "CmsAuto"))
                                 {
-                                    @Html.ActionLink("Подробно", "Details", "Auto", new { autoId = item.AutoId }, new { @class = "btn linkButton" })
+                                    @Html.ActionLink("Заказать", "Create", "Order", new { autoId = item.AutoId }, new { @class = "btn linkButton btn-small" })
                                 }
+                                
+                                @Html.ActionLink("Подробно", "Details", "Auto", new { autoId = item.AutoId }, new { @class = "btn linkButton btn-small" })
 
                                 @if (User.IsInRole("Administrator") && Html.ViewContext.Controller.ControllerContext.RouteData.GetRequiredString("controller") == "CmsAuto")
                                 {
-                                    @Html.ActionLink("Редактировать", "Edit", "CmsAuto", new { id = item.AutoId }, new { @class = "btn linkButton" })
-                                    @Html.ActionLink("Удалить", "Delete", "CmsAuto", new { id = item.AutoId }, new { @class = "btn linkButton" })
+                                    @Html.ActionLink("Редактировать", "Edit", "CmsAuto", new { id = item.AutoId }, new { @class = "btn linkButton btn-small" })
+                                    @Html.ActionLink("Удалить", "Delete", "CmsAuto", new { id = item.AutoId }, new { @class = "btn linkButton btn-small" })
                                 }
 
                             </td>

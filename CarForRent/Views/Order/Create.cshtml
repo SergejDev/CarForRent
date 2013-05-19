@@ -1,153 +1,163 @@
 ﻿@model CarForRent.Models.Order
 
 @{
-    ViewBag.Title = "Order";
+    ViewBag.Title = "Заказать автомобиль";
 }
 
-<h2>Order</h2>
+<h2>Заказ автомобиля</h2>
 
 <div class="container">
-    <h2>Auto details</h2>
+    <h2>Характеристики автомобиля</h2>
+    <table class="table table-bordered myTable">
+        <tr>
+            <td>
+                <h3>ФОТО </h3>
+            </td>
 
-    <div class="displayField">
-        <a href="#" onclick="OpenNewWindow('@CarForRent.Helpers.UrlBuilder.BuildAutoImageUrl((String)ViewBag.CurrentAuto.ImageFileName)', 700, 500); return true;">
-            <img class = "img-rounded" src="@CarForRent.Helpers.UrlBuilder.BuildAutoImageUrl((String)ViewBag.CurrentAuto.ImageFileName)"/>
-        </a>
-    </div>
-    <ul class="ElementsBlock">
-        <li>
-            <div class="displayLabel">
-                Mark auto:
-            </div>
-            <div class="displayField">
-                @ViewBag.CurrentAuto.Mark
-            </div>
-        </li>
-        <li>
-            <div class="displayLabel">
-                Model auto:
-            </div>
-            <div class="displayField">
-                @ViewBag.CurrentAuto.Model
-            </div>
-        </li>
-        <li>
-            <div class="displayLabel">
-                Numbers auto:
-            </div>
-            <div class="displayField">
-                @ViewBag.CurrentAuto.Number
-            </div>
-        </li>
-        <li>
-            <div class="displayLabel">
-                Year of manufacture:
-            </div>
-            <div class="displayField">
-                @ViewBag.CurrentAuto.YearOfManufacture
-            </div>
-        </li>
-        <li>
-            <div class="displayLabel">
-                Places count:
-            </div>
-            <div class="displayField">
-                @ViewBag.CurrentAuto.PlacesCount
-            </div>
-        </li>
-        <li>
-            <div class="displayLabel">
-                Engine volume:
-            </div>
-            <div class="displayField">
-                @ViewBag.CurrentAuto.EngineVolume
-            </div>
-        </li>
-        <li>
-            <div class="displayLabel">
-                Price:
-            </div>
-            <div class="displayField">
-                @ViewBag.CurrentAuto.Price
-            </div>
-        </li>
-        <li>
-            <div class="displayLabel">
-                Engine type:
-            </div>
-            <div class="displayField">
-                @ViewBag.CurrentAuto.EngineType.EngineTypeTitle
-            </div>
-        </li>
-        <li>
-            <div class="displayLabel">
-                Auto class:
-            </div>
-            <div class="displayField">
-                @ViewBag.CurrentAuto.AutoClass.ClassTitle
-            </div>
-        </li>
-        <li>
-            <div class="displayLabel">
-                Fuel type:
-            </div>
-            <div class="displayField">
-                @ViewBag.CurrentAuto.FuelType.FuelTypeTitle
-            </div>
-        </li>
-        <li>
-            <div class="displayLabel">
-                Gearbox type:
-            </div>
-            <div class="displayField">
-                @ViewBag.CurrentAuto.GearboxType.GearboxTypeTitle
-            </div>
-        </li>
-    </ul>
-</div>
-<div style="margin-left: 34px;">
-    @using (Html.BeginForm()) {
+            <td>
+                <a href="#" onclick="OpenNewWindow('@CarForRent.Helpers.UrlBuilder.BuildAutoImageUrl((String)ViewBag.CurrentAuto.ImageFileName)', 700, 500); return true;">
+                    <img class = "img-rounded" src="@CarForRent.Helpers.UrlBuilder.BuildAutoImageUrl((String)ViewBag.CurrentAuto.ImageFileName)"/>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Марка автомобиля:</h4>
+            </td>
+            <td>
+                <h4>@ViewBag.CurrentAuto.Mark</h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Модель автомобиля:</h4>
+            </td>
+            <td>
+                <h4>@ViewBag.CurrentAuto.Model</h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Номера автомобиля:</h4>
+            </td>
+            <td>
+                <h4>@ViewBag.CurrentAuto.Number</h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Год выпуска:</h4>
+            </td>
+            <td>
+                <h4>@ViewBag.CurrentAuto.YearOfManufacture</h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Количество мест</h4>
+            </td>
+            <td>
+                <h4>@ViewBag.CurrentAuto.PlacesCount</h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Объем двигателя</h4>
+            </td>
+            <td>
+                <h4>@ViewBag.CurrentAuto.EngineVolume</h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Цена дол.$/сутки</h4>
+            </td>
+            <td>
+                <h4>@ViewBag.CurrentAuto.Price</h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Тип двигателя </h4>
+            </td>
+            <td>
+                <h4>@ViewBag.CurrentAuto.EngineType.EngineTypeTitle</h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Класс автомобиля</h4>
+            </td>
+            <td>
+                <h4>@ViewBag.CurrentAuto.AutoClass.ClassTitle</h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Тип топлива</h4>
+            </td>
+            <td>
+                <h4>@ViewBag.CurrentAuto.FuelType.FuelTypeTitle</h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Тип коробки передач</h4>
+            </td>
+            <td>
+                <h4>@ViewBag.CurrentAuto.GearboxType.GearboxTypeTitle</h4>
+            </td>
+        </tr>
+    </table>
+
+    <h3>Для заказа автомобиля вы должны указать количество суток проката:
+    </h3>
+
+
+    @using (Html.BeginForm())
+    {
         @Html.ValidationSummary(true)
 
-        <fieldset>
+        @Html.Hidden("AutoId", (int)ViewBag.CurrentAuto.AutoId)
 
-            @Html.Hidden("AutoId", (int)ViewBag.CurrentAuto.AutoId)
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OrderDuration)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OrderDuration)
+            @Html.ValidationMessageFor(model => model.OrderDuration)
+        </div>
+        <div>
+            <input type="submit" value="Заказать автомобиль" class="btn btn-primary btn-large" />
+        </div>
+        <div style="margin-top: 30px;">
+            @Html.ActionLink("Вернуться к списку", "Index", "CmsAuto", null, new { @class = "btn" })
+        </div>
 
-            <div class="editor-label">
-                @Html.LabelFor(model => model.OrderDuration)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.OrderDuration)
-                @Html.ValidationMessageFor(model => model.OrderDuration)
-            </div>
-            <p>
-                <input type="submit" value="Order"  class="btn"/>
-            </p>
-        </fieldset>
     }
 
-    <div>
-        @Html.ActionLink("Back to List", "Index", "CmsAuto", null, new { @class="btn"})
-    </div>
+
+
+
 </div>
 
-
-@section Scripts {
+@section Scripts 
+    {
     @Scripts.Render("~/bundles/jqueryval")
-<script type="text/javascript">
-    function OpenNewWindow(bigurl, width, height) {
-        var newWindow = window.open("", "pictureViewer",
-            "location=no, directories=no, fullscreen=no, " +
-            "menubar=no, status=no, toolbar=no, width=" +
-            width + ", height=" + height + ", scrollbars=no");
-        newWindow.document.writeln("<html>");
-        newWindow.document.writeln("<body style='margin: 0 0 0 0;'>");
-        newWindow.document.writeln("<a href='javascript:window.close();'>");
-        newWindow.document.writeln("<img src='" + bigurl +
-           "' alt='Click to close' id='bigImage'/>");
-        newWindow.document.writeln("</a>");
-        newWindow.document.writeln("</body></html>");
-        newWindow.document.close();
-    }
-</script>
+    <script type="text/javascript">
+        function OpenNewWindow(bigurl, width, height) {
+            var newWindow = window.open("", "pictureViewer",
+                "location=no, directories=no, fullscreen=no, " +
+                "menubar=no, status=no, toolbar=no, width=" +
+                width + ", height=" + height + ", scrollbars=no");
+            newWindow.document.writeln("<html>");
+            newWindow.document.writeln("<body style='margin: 0 0 0 0;'>");
+            newWindow.document.writeln("<a href='javascript:window.close();'>");
+            newWindow.document.writeln("<img src='" + bigurl +
+               "' alt='Click to close' id='bigImage'/>");
+            newWindow.document.writeln("</a>");
+            newWindow.document.writeln("</body></html>");
+            newWindow.document.close();
+        }
+    </script>
 }

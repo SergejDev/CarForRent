@@ -28,11 +28,11 @@
     <div class="display-field">
         @if (Model.IsOpen)
         {
-            <div>Да</div>
+            <div>Активен</div>
         }
         else
         {
-            <div>Нет</div>
+            <div>Не активен</div>
         }
     </div>
 
@@ -51,5 +51,5 @@
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Back to List", "Index", null, new { @class="btn"})
+    @Html.ActionLink("Вернуться к списку", "Index", null, new { @class="btn"})
 </p>

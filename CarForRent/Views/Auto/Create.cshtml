@@ -1,127 +1,195 @@
 ﻿@model CarForRent.Models.Auto
 
 @{
-    ViewBag.Title = "Add auto";
+    ViewBag.Title = "Добавить автомобиль";
     Html.EnableClientValidation(false);
 }
 
-<h2>Add auto</h2>
+<h2>Добавить автомобиль</h2>
 
 @using (Html.BeginForm("Create", "CmsAuto", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.ValidationSummary(true)
 
-    <fieldset>
-        <legend></legend>
+    <table>
+        <tr>
+            <td>
+                <h5>Укажите путь к фото автомобиля </h5>
+            </td>
+            <td>
+                <div class="editor-field"  style="margin-bottom: 30px; margin-top: 30px">
+                    <input type="file" name="file" />
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Mark)
+                </div>
+            </td>
+            <td>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Mark)
+                    @Html.ValidationMessageFor(model => model.Mark)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Model)
+                </div>
+            </td>
+            <td>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Model)
+                    @Html.ValidationMessageFor(model => model.Model)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.AutoClass)
+                </div>
+            </td>
+            <td>
+                <div class="editor-field">
+                    @Html.DropDownListFor(model => model.AutoClassId, (SelectList)ViewBag.AutoClassItems)
+                    @Html.ValidationMessageFor(model => model.AutoClass)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.EngineType)
+                </div>
+            </td>
+            <td>
+                <div class="editor-field">
+                    @Html.DropDownListFor(model => model.EngineTypeId, (SelectList)ViewBag.EngineTypeItems)
+                    @Html.ValidationMessageFor(model => model.EngineType)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.GearboxType)
+                </div>
+            </td>
+            <td>
+                <div class="editor-field">
+                    @Html.DropDownListFor(model => model.GearboxTypeId, (SelectList)ViewBag.GearboxTypeItems)
+                    @Html.ValidationMessageFor(model => model.GearboxType)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.FuelType)
+                </div>
+            </td>
+            <td>
+                <div class="editor-field">
+                    @Html.DropDownListFor(model => model.FuelTypeId, (SelectList)ViewBag.FuelTypeItems)
+                    @Html.ValidationMessageFor(model => model.FuelType)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Number)
+                </div>
+            </td>
+            <td>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Number)
+                    @Html.ValidationMessageFor(model => model.Number)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.YearOfManufacture)
+                </div>
+            </td>
+            <td>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.YearOfManufacture)
+                    @Html.ValidationMessageFor(model => model.YearOfManufacture)
+                </div>
+            </td>
+        </tr>
 
-        <div class="editor-field"  style="margin-bottom: 30px; margin-top: 30px">
-            <input type="file" name="file" />
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Mark)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Mark)
-            @Html.ValidationMessageFor(model => model.Mark)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Model)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Model)
-            @Html.ValidationMessageFor(model => model.Model)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.AutoClass)
-        </div>
-        <div class="editor-field">
-            @Html.DropDownListFor(model => model.AutoClassId, (SelectList)ViewBag.AutoClassItems)
-            @Html.ValidationMessageFor(model => model.AutoClass)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.EngineType)
-        </div>
-        <div class="editor-field">
-            @Html.DropDownListFor(model => model.EngineTypeId, (SelectList)ViewBag.EngineTypeItems)
-            @Html.ValidationMessageFor(model => model.EngineType)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.GearboxType)
-        </div>
-        <div class="editor-field">
-            @Html.DropDownListFor(model => model.GearboxTypeId, (SelectList)ViewBag.GearboxTypeItems)
-            @Html.ValidationMessageFor(model => model.GearboxType)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.FuelType)
-        </div>
-        <div class="editor-field">
-            @Html.DropDownListFor(model => model.FuelTypeId, (SelectList)ViewBag.FuelTypeItems)
-            @Html.ValidationMessageFor(model => model.FuelType)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Number)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Number)
-            @Html.ValidationMessageFor(model => model.Number)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.YearOfManufacture)
-        </div>
-        <div class="editor-field">
-            @Html.TextBoxFor(model => model.YearOfManufacture)
-            @Html.ValidationMessageFor(model => model.YearOfManufacture)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.PlacesCount)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.PlacesCount)
-            @Html.ValidationMessageFor(model => model.PlacesCount)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.EngineVolume)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.EngineVolume)
-            @Html.ValidationMessageFor(model => model.EngineVolume)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Price)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Price)
-            @Html.ValidationMessageFor(model => model.Price)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.AutoCount)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.AutoCount)
-            @Html.ValidationMessageFor(model => model.AutoCount)
-        </div>
-
-        <p>
-            <input type="submit" value="Create" />
-        </p>
-    </fieldset>
+        <tr>
+            <td>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.PlacesCount)
+                </div>
+            </td>
+            <td>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.PlacesCount)
+                    @Html.ValidationMessageFor(model => model.PlacesCount)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.EngineVolume)
+                </div>
+            </td>
+            <td>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.EngineVolume)
+                    @Html.ValidationMessageFor(model => model.EngineVolume)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Price)
+                </div>
+            </td>
+            <td>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Price)
+                    @Html.ValidationMessageFor(model => model.Price)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.AutoCount)
+                </div>
+            </td>
+            <td>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.AutoCount)
+                    @Html.ValidationMessageFor(model => model.AutoCount)
+                </div>
+            </td>
+        </tr>
+        
+    </table>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    <input type="submit" value="Добавить автомобиль" class="btn btn-primary btn-large" style="margin-top: 30px; margin-bottom: 30px" />
+</div>
+
+
+<div>
+    @Html.ActionLink("Вернуться к списку", "Index", null, new { @class = "btn" })
 </div>
 
 @section Scripts {

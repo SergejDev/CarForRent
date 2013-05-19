@@ -1,58 +1,83 @@
 ﻿@model CarForRent.Models.UserProfile
 
 @{
-    ViewBag.Title = "Edit user";
+    ViewBag.Title = "Редактировать данные пользователя";
 }
 
-<h2>Edit user</h2>
+<h2>Редактировать данные пользователя</h2>
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.ValidationSummary(true)
 
-    <fieldset>
-        @*@Html.Hidden("id", (int)ViewBag.AutoId)*@
-        @Html.HiddenFor(model => model.UserId)
-        @Html.HiddenFor(model => model.UserName)
-        <div class="editor-label">
-            @Html.LabelFor(model => model.UserFirstName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.UserFirstName)
-            @Html.ValidationMessageFor(model => model.UserFirstName)
-        </div>
+    
+@*@Html.Hidden("id", (int)ViewBag.AutoId)*@
+    @Html.HiddenFor(model => model.UserId)
+    @Html.HiddenFor(model => model.UserName)
+    
+    <table>
+        <tr>
+            <td>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.UserFirstName)
+                </div>
+            </td>
+            <td>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.UserFirstName)
+                    @Html.ValidationMessageFor(model => model.UserFirstName)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.UserMidleName)
+                </div>
+            </td>
+            <td>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.UserMidleName)
+                    @Html.ValidationMessageFor(model => model.UserMidleName)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.UserLastName)
+                </div>
+            </td>
+            <td>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.UserLastName)
+                    @Html.ValidationMessageFor(model => model.UserLastName)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.PassportNumber)
+                </div>
+            </td>
+            <td>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.PassportNumber)
+                    @Html.ValidationMessageFor(model => model.PassportNumber)
+                </div>
+            </td>
+        </tr>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.UserMidleName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.UserMidleName)
-            @Html.ValidationMessageFor(model => model.UserMidleName)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.UserLastName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.UserLastName)
-            @Html.ValidationMessageFor(model => model.UserLastName)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.PassportNumber)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.PassportNumber)
-            @Html.ValidationMessageFor(model => model.PassportNumber)
-        </div>
-
-        <p>
-            <input type="submit" value="Save" />
-        </p>
-    </fieldset>
+    </table>
 }
 
+<div style="margin-top: 30px; margin-bottom: 30px">
+    <input type="submit" value="Сохранить изменения" class="btn btn-primary" />
+</div>
+
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Вернуться к списку пользователей", "Index", null, new { @class = "btn" })
 </div>
 
 @section Scripts {

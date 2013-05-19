@@ -1,63 +1,91 @@
 ﻿@model CarForRent.Models.Order
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Редактировать заказ";
 }
 
-<h2>Edit order</h2>
+<h2>Редактировать заказ</h2>
 
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary(true)
-    <fieldset>
+    
         @Html.HiddenFor(model => model.AutoId)
 
         @Html.HiddenFor(model => model.ClientId)
 
         @Html.HiddenFor(model => model.OrderId)
+    <table class="table table-bordered">
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.OrderDuration)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.OrderDuration)
+                    @Html.HiddenFor(model => model.OrderDuration)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.OrderDate)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.OrderDate)
+                    @Html.HiddenFor(model => model.OrderDate)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.Auto.Mark)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Auto.Mark)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.Client.UserName)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Client.UserName)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.IsOpen)
+                </div>
+            </td>
+            <td>
+                <div class="editor-field">
+                    Активен&nbsp;
+                    @Html.EditorFor(model => model.IsOpen)
+                    @Html.ValidationMessageFor(model => model.IsOpen)
+                </div>
+            </td>
+        </tr>
+    </table>
 
-        <div class="display-label">
-            @Html.DisplayNameFor(model => model.OrderDuration)
+        <div style="margin-top: 30px; margin-bottom: 30px">
+            <input type="submit" value="Сохранить изменения" class="btn btn-primary" />
         </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.OrderDuration)
-            @Html.HiddenFor(model => model.OrderDuration)
-        </div>
-
-        <div class="display-label">
-            @Html.DisplayNameFor(model => model.OrderDate)
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.OrderDate)
-            @Html.HiddenFor(model => model.OrderDate)
-        </div>
-
-        <div class="display-label">
-            @Html.DisplayNameFor(model => model.Auto.Mark)
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.Auto.Mark)
-        </div>
-
-        <div class="display-label">
-            @Html.DisplayNameFor(model => model.Client.UserName)
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.Client.UserName)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.IsOpen)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.IsOpen)
-            @Html.ValidationMessageFor(model => model.IsOpen)
-        </div>
-        <p>
-            <input type="submit" value="Save" />
-        </p>
-    </fieldset>
 }
-<p>
-    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn" })
-</p>
+<div>
+    @Html.ActionLink("Вернуться к списку заказов", "Index", null, new { @class = "btn" })
+</div>
